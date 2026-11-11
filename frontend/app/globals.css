@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, "Segoe UI", sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, "SF Mono", monospace;
+
+  --color-ink: #10231f;
+  --color-ink-2: #1b3631;
+  --color-canvas: #f3f5f2;
+  --color-surface: #ffffff;
+  --color-line: #dde4dd;
+  --color-muted: #5d6c67;
+  --color-brand: #0f766e;
+  --color-brand-strong: #0a5852;
+  --color-brand-soft: #e2f1ee;
+  --color-warn: #a35a06;
+  --color-warn-soft: #fcefd8;
+  --color-danger: #b42318;
+  --color-danger-soft: #fce7e4;
+  --color-ok: #17794a;
+  --color-ok-soft: #e1f3e8;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: 14px;
+}
+
+.num {
+  font-variant-numeric: tabular-nums;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 1px;
+}
+
+/* Printing: only the element marked .print-area is printed (receipts, invoices, reports). */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  .print-area,
+  .print-area * {
+    visibility: visible;
+  }
+  .print-area {
+    position: absolute;
+    inset: 0 auto auto 0;
+    width: 100%;
+    color: #000;
+    background: #fff;
+  }
+  .no-print {
+    display: none !important;
+  }
+}
+
+/* 80mm thermal roll */
+.receipt-80 {
+  width: 72mm;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  line-height: 1.35;
+}
+
+@page {
+  margin: 6mm;
+}

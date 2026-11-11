@@ -1,0 +1,36 @@
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+backend/staticfiles/
+backend/media/
+*.sqlite3
+
+# Node
+node_modules/
+.next/
+out/
+*.tsbuildinfo
+next-env.d.ts
+
+# Expo
+.expo/
+dist/
+web-build/
+expo-env.d.ts
+phone/android/
+phone/ios/
+
+# Secrets and local data
+.env
+.env.*
+!.env.example
+secrets/*
+!secrets/.gitkeep
+backups/*
+!backups/.gitkeep
+google-services.json
+GoogleService-Info.plist
+
+.DS_Store

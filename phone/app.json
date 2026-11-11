@@ -1,0 +1,60 @@
+{
+  "expo": {
+    "name": "MediPos",
+    "slug": "medipos",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "medipos",
+    "userInterfaceStyle": "light",
+    "ios": {
+      "bundleIdentifier": "com.medipos.app",
+      "supportsTablet": true
+    },
+    "android": {
+      "package": "com.medipos.app",
+      "adaptiveIcon": {
+        "backgroundColor": "#10231F",
+        "foregroundImage": "./assets/images/android-icon-foreground.png",
+        "monochromeImage": "./assets/images/android-icon-monochrome.png"
+      },
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.POST_NOTIFICATIONS"
+      ]
+    },
+    "plugins": [
+      "expo-router",
+      "expo-secure-store",
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "MediPos uses the camera to scan medicine barcodes.",
+          "recordAudioAndroid": false
+        }
+      ],
+      [
+        "expo-notifications",
+        {
+          "color": "#0F766E",
+          "defaultChannel": "general"
+        }
+      ],
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#10231F",
+          "image": "./assets/images/splash-icon.png",
+          "imageWidth": 76
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true,
+      "reactCompiler": true
+    },
+    "extra": {
+      "apiUrl": "http://10.0.2.2:8000"
+    }
+  }
+}

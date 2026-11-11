@@ -1,0 +1,100 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  backend:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_DB: medipos
+          POSTGRES_USER: medipos
+          POSTGRES_PASSWORD: medipos
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U medipos" --health-interval 5s --health-timeout 5s --health-retries 10
+    env:
+      DJANGO_DEBUG: "1"
+      DATABASE_URL: postgres://medipos:medipos@localhost:5432/medipos
+      THROTTLE_AUTH: 1000/min
+    defaults:
+      run:
+        working-directory: backend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: pip
+          cache-dependency-path: backend/requirements*.txt
+      - run: pip install -r requirements-dev.txt
+      - name: Migrations are up to date
+        run: python manage.py makemigrations --check --dry-run
+      - name: Deployment checks
+        run: DJANGO_DEBUG=0 DJANGO_SECRET_KEY=ci-only-$(openssl rand -hex 24) python manage.py check --deploy --fail-level ERROR
+      - name: Tests (PostgreSQL, includes the concurrent-sale test)
+        run: pytest
+      - name: OpenAPI schema builds
+        run: python manage.py spectacular --file /tmp/openapi.yaml
+
+  frontend:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - run: npm ci
+      - run: npm run lint
+      - run: npx tsc --noEmit
+      - run: npm run build
+
+  phone:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: phone
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: phone/package-lock.json
+      - run: npm ci
+      - run: npx expo lint
+      - run: npx tsc --noEmit
+      - name: Android bundle builds
+        run: npx expo export --platform android --output-dir /tmp/expo-export
+
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Images build and the stack answers its health check
+        env:
+          DJANGO_SECRET_KEY: ci-only-not-a-real-secret-0123456789abcdef
+          POSTGRES_PASSWORD: ci-only-password
+          SECURE_SSL_REDIRECT: "0"
+        run: |
+          docker compose up -d --build db redis backend frontend
+          for attempt in $(seq 1 30); do
+            if curl -fsS http://localhost:8000/api/health/ && curl -fsS -o /dev/null http://localhost:3000/login; then exit 0; fi
+            sleep 4
+          done
+          docker compose logs --tail 80
+          exit 1
