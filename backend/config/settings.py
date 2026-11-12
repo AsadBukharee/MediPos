@@ -99,7 +99,7 @@ TEMPLATES = [
 DATABASES = {
     "default": dj_database_url.config(
         env="DATABASE_URL",
-        default="postgres://medipos:medipos@localhost:5432/medipos",
+        default=f"sqlite:///{BASE_DIR / 'db.sqlite3'}",
         conn_max_age=60,
     )
 }
