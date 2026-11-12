@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import { Button, Card, Input, Notice, PageHeader, Select, Stat } from "@/components/ui";
 import { download } from "@/lib/api";
@@ -71,6 +72,9 @@ export default function ReportsPage() {
         )}
         <Button variant="secondary" onClick={() => download(report.path, params, `${report.id}.csv`)}>Export CSV</Button>
         <Button variant="secondary" onClick={() => window.print()}>Print</Button>
+        <Link href="/reports/trends" className="text-[13px] font-medium text-brand hover:underline">
+          Sales trends chart
+        </Link>
       </PageHeader>
 
       {totals.data && (

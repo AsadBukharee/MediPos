@@ -1,9 +1,9 @@
 """Report queries. Every figure is derived from posted documents and ledgers, never stored twice."""
-from datetime import timedelta
+from datetime import datetime, time, timedelta
 from decimal import Decimal
 
 from django.db.models import Count, DecimalField, ExpressionWrapper, F, Max, Q, Sum, Value
-from django.db.models.functions import Coalesce, TruncDate
+from django.db.models.functions import Coalesce, TruncDate, TruncDay, TruncHour, TruncMonth, TruncWeek
 from django.utils import timezone
 
 from apps.common.money import ZERO, money
@@ -174,4 +174,104 @@ def dashboard(branch) -> dict:
         "customer_receivables": money(receivables),
         "top_products": sales_by("product", branches, month_start, today, limit=5),
         "sales_chart": sales_by("day", branches, today - timedelta(days=13), today),
+    }
+
+
+# --- Sales trend over time (one line per medicine) ------------------------------------------
+
+TREND_BUCKETS = {"hour": TruncHour, "day": TruncDay, "week": TruncWeek, "month": TruncMonth}
+MAX_TREND_SERIES = 8  # the categorical palette has eight slots; more lines cannot be told apart
+MAX_TREND_BUCKETS = 400
+
+
+def _bucket_starts(bucket: str, date_from, date_to) -> list[datetime]:
+    """Every bucket start in the range, in local time, matching how the database truncates."""
+    starts: list[datetime] = []
+    if bucket == "hour":
+        cursor, end = datetime.combine(date_from, time.min), datetime.combine(date_to, time.max)
+        while cursor <= end:
+            starts.append(cursor)
+            cursor += timedelta(hours=1)
+    elif bucket == "day":
+        cursor = date_from
+        while cursor <= date_to:
+            starts.append(datetime.combine(cursor, time.min))
+            cursor += timedelta(days=1)
+    elif bucket == "week":
+        cursor = date_from - timedelta(days=date_from.weekday())  # Monday, as TruncWeek does
+        while cursor <= date_to:
+            starts.append(datetime.combine(cursor, time.min))
+            cursor += timedelta(days=7)
+    else:
+        cursor = date_from.replace(day=1)
+        while cursor <= date_to:
+            starts.append(datetime.combine(cursor, time.min))
+            cursor = (cursor.replace(day=28) + timedelta(days=4)).replace(day=1)
+    tz = timezone.get_current_timezone()
+    return [timezone.make_aware(start, tz) for start in starts]
+
+
+def _bucket_label(bucket: str, start: datetime) -> str:
+    return start.strftime("%Y-%m-%dT%H:00") if bucket == "hour" else start.date().isoformat()
+
+
+def sales_trend(*, branches, products, date_from, date_to, bucket: str = "day") -> dict:
+    """How much of each medicine was sold per period, as parallel series on one time axis.
+
+    Every series carries a value for every bucket (0 where nothing sold), so the lines share
+    one x axis and a quiet period reads as zero instead of a gap the chart would draw through.
+    Quantities are what was sold at the time of sale, in base units; later returns are not
+    subtracted, because they belong to the day they came back, not the day of the sale.
+    """
+    if bucket not in TREND_BUCKETS:
+        raise ValueError(f"Unknown bucket. Use one of: {', '.join(TREND_BUCKETS)}.")
+    if not products:
+        raise ValueError("Choose at least one medicine.")
+    if len(products) > MAX_TREND_SERIES:
+        raise ValueError(f"Up to {MAX_TREND_SERIES} medicines can be compared at once.")
+    starts = _bucket_starts(bucket, date_from, date_to)
+    if not starts:
+        raise ValueError("The date range is empty.")
+    if len(starts) > MAX_TREND_BUCKETS:
+        raise ValueError(f"That range needs {len(starts)} {bucket} points; choose a wider period or a shorter range.")
+
+    rows = (
+        SaleItem.objects.filter(sale__in=completed_sales(branches, date_from, date_to), product__in=products)
+        .annotate(t=TREND_BUCKETS[bucket]("sale__completed_at"))
+        .values("product_id", "t")
+        .annotate(quantity=Coalesce(Sum("quantity_base"), Value(0)), revenue=_dsum("line_total"))
+    )
+    found = {(row["product_id"], row["t"]): row for row in rows}
+    index = {start: position for position, start in enumerate(starts)}
+
+    series = []
+    for product in products:
+        quantities = [0] * len(starts)
+        revenues = [ZERO] * len(starts)
+        for start in starts:
+            row = found.get((product.pk, start))
+            if row:
+                position = index[start]
+                quantities[position] = row["quantity"]
+                revenues[position] = money(row["revenue"])
+        peak = max(quantities)
+        series.append({
+            "product": product.pk,
+            "label": str(product),
+            "unit": product.base_unit.name,
+            "quantity": quantities,
+            "revenue": revenues,
+            "total_quantity": sum(quantities),
+            "total_revenue": money(sum(revenues, ZERO)),
+            # The point of the chart: when this medicine moved most.
+            "peak_quantity": peak,
+            "peak_bucket": _bucket_label(bucket, starts[quantities.index(peak)]) if peak else None,
+        })
+    series.sort(key=lambda row: row["total_quantity"], reverse=True)
+    return {
+        "bucket": bucket,
+        "date_from": date_from,
+        "date_to": date_to,
+        "buckets": [_bucket_label(bucket, start) for start in starts],
+        "series": series,
     }

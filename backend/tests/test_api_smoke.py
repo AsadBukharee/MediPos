@@ -1,4 +1,5 @@
 """Every read endpoint and report answers for an owner with real data behind it."""
+from datetime import timedelta
 from decimal import Decimal
 
 import pytest
@@ -117,3 +118,92 @@ def test_notification_centre_and_devices(api, owner, branch, busy_branch):
     assert client.delete("/api/v1/notifications/devices/", {"token": "fcm-token-1"}, format="json").status_code == 204
     alert_id = notification["data"]["alert_id"]
     assert client.get(f"/api/v1/notifications/alerts/{alert_id}/").data["status"] == "open"
+
+
+def test_sales_trend_puts_each_medicine_on_a_shared_time_axis(api, owner, branch, cashier, make_product, stock):
+    """The admin chart: units sold per medicine per day, so the busiest day stands out."""
+    from django.utils import timezone
+
+    from apps.sales.models import Sale
+
+    panadol, brufen, risek = make_product("Panadol"), make_product("Brufen"), make_product("Risek")
+    for product in (panadol, brufen, risek):
+        stock(branch, product, 500)
+    today = timezone.localdate()
+
+    def sell_on(product, quantity, days_ago):
+        sale = sell(branch, cashier, product, quantity)
+        when = timezone.now() - timedelta(days=days_ago)
+        Sale.objects.filter(pk=sale.pk).update(completed_at=when)
+        return sale
+
+    sell_on(panadol, 3, 4)
+    sell_on(panadol, 20, 2)   # Panadol's busiest day
+    sell_on(panadol, 5, 2)    # same day, so it adds up: 25
+    sell_on(brufen, 7, 3)
+    # Risek sells nothing: it must still come back as a flat zero line, not vanish.
+
+    client = api(owner, branch)
+    products = f"{panadol.pk},{brufen.pk},{risek.pk}"
+    response = client.get("/api/v1/reports/sales/trend/", {
+        "products": products, "date_from": str(today - timedelta(days=6)), "date_to": str(today)})
+    assert response.status_code == 200, response.data
+    data = response.data
+    assert data["buckets"] == [str(today - timedelta(days=offset)) for offset in range(6, -1, -1)]
+
+    by_label = {row["label"]: row for row in data["series"]}
+    assert [row["label"] for row in data["series"]] == ["Panadol", "Brufen", "Risek"]  # busiest first
+    assert len(by_label["Panadol"]["quantity"]) == len(data["buckets"])  # every series shares the axis
+    assert by_label["Panadol"]["quantity"] == [0, 0, 3, 0, 25, 0, 0]
+    assert by_label["Panadol"]["peak_bucket"] == str(today - timedelta(days=2))
+    assert by_label["Panadol"]["total_quantity"] == 28
+    assert by_label["Panadol"]["total_revenue"] == Decimal("56.00")
+    assert by_label["Brufen"]["quantity"] == [0, 0, 0, 7, 0, 0, 0]
+    assert by_label["Risek"]["quantity"] == [0] * 7 and by_label["Risek"]["peak_bucket"] is None
+
+    weekly = client.get("/api/v1/reports/sales/trend/", {
+        "products": products, "bucket": "week", "date_from": str(today - timedelta(days=6)), "date_to": str(today)}).data
+    assert sum(sum(row["quantity"]) for row in weekly["series"]) == 35  # same units, coarser buckets
+
+    hourly = client.get("/api/v1/reports/sales/trend/", {"products": products, "bucket": "hour"})
+    assert hourly.status_code == 400  # 30 days of hours is past the point cap
+    assert client.get("/api/v1/reports/sales/trend/", {
+        "products": products, "bucket": "hour", "date_from": str(today), "date_to": str(today)}).status_code == 200
+
+
+def test_sales_trend_input_is_checked(api, owner, branch, product, make_product):
+    client = api(owner, branch)
+    bad = [
+        {},
+        {"products": ""},
+        {"products": "abc"},
+        {"products": "999999"},
+        {"products": str(product.pk), "bucket": "fortnight"},
+        {"products": ",".join(str(product.pk) for _ in range(9))},
+        {"products": str(product.pk), "date_from": "2026-06-01", "date_to": "2026-05-01"},
+    ]
+    for params in bad:
+        assert client.get("/api/v1/reports/sales/trend/", params).status_code == 400, params
+    assert client.get("/api/v1/reports/sales/trend/", {"products": str(product.pk)}).status_code == 200
+
+
+def test_sales_trend_is_branch_scoped_and_permissioned(api, cashier, owner, make_user, branch, other_branch, product, stock):
+    from django.utils import timezone
+
+    stock(branch, product, 100)
+    sell(branch, cashier, product, 4)
+    today = timezone.localdate()
+    params = {"products": str(product.pk), "date_from": str(today), "date_to": str(today)}
+
+    assert api(cashier, branch).get("/api/v1/reports/sales/trend/", params).status_code == 403  # no reports.view
+    owner_in_main = api(owner, branch).get("/api/v1/reports/sales/trend/", params).data
+    assert owner_in_main["series"][0]["quantity"] == [4]
+    owner_elsewhere = api(owner, other_branch).get("/api/v1/reports/sales/trend/", params).data
+    assert owner_elsewhere["series"][0]["quantity"] == [0]  # the other branch sold none of it
+    consolidated = api(owner, other_branch).get(
+        "/api/v1/reports/sales/trend/", {**params, "consolidated": 1}).data
+    assert consolidated["series"][0]["quantity"] == [4]
+
+    csv_export = api(owner, branch).get("/api/v1/reports/sales/trend/", {**params, "export": "csv"})
+    assert csv_export["Content-Type"] == "text/csv"
+    assert str(product) in csv_export.content.decode()

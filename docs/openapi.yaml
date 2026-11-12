@@ -4076,6 +4076,52 @@ paths:
                 type: object
                 additionalProperties: {}
           description: ''
+  /api/v1/reports/sales/trend/:
+    get:
+      operationId: v1_reports_sales_trend_retrieve
+      description: |-
+        How much of each chosen medicine sold per period, as one line per medicine.
+
+        ?products=1,2,3&bucket=hour|day|week|month&date_from=&date_to=&export=csv
+      summary: Units and revenue per medicine over time, one series per medicine on
+        a shared time axis
+      parameters:
+      - in: query
+        name: bucket
+        schema:
+          type: string
+      - in: query
+        name: consolidated
+        schema:
+          type: string
+      - in: query
+        name: date_from
+        schema:
+          type: string
+      - in: query
+        name: date_to
+        schema:
+          type: string
+      - in: query
+        name: export
+        schema:
+          type: string
+      - in: query
+        name: products
+        schema:
+          type: string
+      tags:
+      - v1
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: {}
+          description: ''
   /api/v1/sales/:
     get:
       operationId: v1_sales_list

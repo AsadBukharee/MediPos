@@ -1,10 +1,13 @@
 import csv
+from datetime import timedelta
 
 from django.http import HttpResponse
+from django.utils import timezone
 from django.utils.dateparse import parse_date
 from rest_framework import serializers
 from rest_framework.response import Response
 
+from apps.catalog.models import Product
 from apps.common.api import BranchAPIView
 from apps.common.schema import documented
 
@@ -89,3 +92,50 @@ class InventoryReportView(ReportView):
         except ValueError as exc:
             raise serializers.ValidationError({"report": str(exc)})
         return _table(request, rows, report)
+
+
+class SalesTrendView(ReportView):
+    """How much of each chosen medicine sold per period, as one line per medicine.
+
+    ?products=1,2,3&bucket=hour|day|week|month&date_from=&date_to=&export=csv
+    """
+
+    @documented(
+        "Units and revenue per medicine over time, one series per medicine on a shared time axis",
+        params=("products", "bucket", "date_from", "date_to", "consolidated", "export"),
+    )
+    def get(self, request):
+        q = request.query_params
+        raw = [value for value in q.get("products", "").replace(",", " ").split() if value]
+        try:
+            wanted = [int(value) for value in raw]
+        except ValueError:
+            raise serializers.ValidationError({"products": "Send medicine ids, comma separated."})
+        if not wanted:
+            raise serializers.ValidationError({"products": "Choose at least one medicine."})
+        if len(wanted) > selectors.MAX_TREND_SERIES:
+            raise serializers.ValidationError(
+                {"products": f"Up to {selectors.MAX_TREND_SERIES} medicines can be compared at once."})
+        found = {p.pk: p for p in Product.objects.filter(pk__in=wanted).select_related("base_unit")}
+        missing = [value for value in wanted if value not in found]
+        if missing:
+            raise serializers.ValidationError({"products": f"No medicine with id {missing[0]}."})
+
+        date_to = parse_date(q.get("date_to") or "") or timezone.localdate()
+        date_from = parse_date(q.get("date_from") or "") or date_to - timedelta(days=29)
+        if date_from > date_to:
+            raise serializers.ValidationError({"date_from": "The start date is after the end date."})
+        try:
+            data = selectors.sales_trend(
+                branches=_branches(request), products=[found[value] for value in wanted],
+                date_from=date_from, date_to=date_to, bucket=q.get("bucket", "day"))
+        except ValueError as exc:
+            raise serializers.ValidationError({"detail": str(exc)})
+
+        if q.get("export") == "csv":
+            rows = [
+                {"period": label, **{row["label"]: row["quantity"][position] for row in data["series"]}}
+                for position, label in enumerate(data["buckets"])
+            ]
+            return _table(request, rows, "sales-trend")
+        return Response(data)

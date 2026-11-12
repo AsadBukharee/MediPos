@@ -283,3 +283,26 @@ export interface Dashboard {
 }
 
 export type Row = Record<string, string | number | null>;
+
+export type TrendBucket = "hour" | "day" | "week" | "month";
+
+export interface TrendSeries {
+  product: number;
+  label: string;
+  unit: string;
+  /** One value per bucket, zero where nothing sold, so every series shares the x axis. */
+  quantity: number[];
+  revenue: string[];
+  total_quantity: number;
+  total_revenue: string;
+  peak_quantity: number;
+  peak_bucket: string | null;
+}
+
+export interface SalesTrend {
+  bucket: TrendBucket;
+  date_from: string;
+  date_to: string;
+  buckets: string[];
+  series: TrendSeries[];
+}

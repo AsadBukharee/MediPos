@@ -18,6 +18,7 @@ const NAV: { href: string; label: string; permission: string; group: string }[] 
   { href: "/purchases", label: "Purchases", permission: "purchases.view", group: "Buy" },
   { href: "/suppliers", label: "Suppliers", permission: "suppliers.view", group: "Buy" },
   { href: "/reports", label: "Reports", permission: "reports.view", group: "Finance" },
+  { href: "/reports/trends", label: "Sales trends", permission: "reports.view", group: "Finance" },
   { href: "/accounting", label: "Accounting", permission: "accounting.view", group: "Finance" },
   { href: "/users", label: "Users", permission: "users.manage", group: "Admin" },
 ];

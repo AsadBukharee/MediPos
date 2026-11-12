@@ -4,11 +4,16 @@ Last updated with the first commit. Section numbers refer to [`requirements.md`]
 
 ## Verified
 
-- Backend: 103 automated tests pass on PostgreSQL 16 (66 of them are one smoke check per read endpoint and report), including 25 concurrent sales against 10 units of
+- Backend: 106 automated tests pass on PostgreSQL 16 (66 of them are one smoke check per read endpoint and report), including 25 concurrent sales against 10 units of
   stock (exactly 10 succeed), expired-batch refusal, GRN confirmed twice (stock once), returns and
   cancellations preserving history, branch isolation, role restrictions, alert de-duplication, and
   stock valuation = stock ledger = Inventory GL account, and gross profit agreeing across the sales report, the
   per-medicine report and the profit & loss statement.
+- Sales trends: the chart was driven in a browser against 218 seeded sales — five medicines
+  picked through the search-and-tick dropdown render five distinct lines, the crosshair reads out
+  every series at once, keyboard arrows move it, removing a medicine leaves the others' colours
+  untouched, and the table view lists every value. Its palette is validated for colour-vision
+  deficiency on this surface.
 - Web app: lint, type-check and both production builds pass — the Vercel-style build (every route
   prerendered as static content, nothing fetched at build time) and the Docker standalone build. Login, dashboard, a POS sale with receipt, and
   every page were opened in a real browser against the running API with no console or API errors.
@@ -41,7 +46,7 @@ Last updated with the first commit. Section numbers refer to [`requirements.md`]
 | 10 | Mobile app | Login, branch selection, role-based tabs, alerts with actions, order list, search, stock/batch/expiry, scanner, adjustment requests, manager dashboard, notification history, deep links, offline read-only cache |
 | 11 | Customers | Profiles, price tiers, credit limits, balances, payments |
 | 12 | Accounting | Chart of accounts, automatic postings for sales, returns, GRNs, payments, adjustments; expenses; general ledger, trial balance, P&L, balance sheet; period lock; reversals |
-| 15 | Reports | Dashboard; sales by day/medicine/category/cashier/customer/payment method; purchases by supplier/medicine; valuation, low/out, expiry, fast/slow/dead stock; CSV export and print |
+| 15 | Reports | Dashboard; **sales trends — up to eight medicines as coloured lines over time, by hour/day/week/month, units or revenue, with each medicine's peak marked**; sales by day/medicine/category/cashier/customer/payment method; purchases by supplier/medicine; valuation, low/out, expiry, fast/slow/dead stock; CSV export and print |
 | 16 | Notifications | In-app centre, read/unread, preferences, FCM sender with retry, low/out-of-stock, near-expiry/expired, approval requests, goods received |
 | 18–19 | Security & architecture | Server-side enforcement, service layer, selectors, constraints, atomic transactions, idempotency, versioned API, OpenAPI, structured logs, health checks, CI |
 
