@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { Badge, Button, DataTable, Field, Input, Modal, Notice, PageHeader, Select } from "@/components/ui";
+import { SearchSelect } from "@/components/search-select";
+import { Badge, Button, DataTable, Field, Input, Modal, Notice, PageHeader } from "@/components/ui";
 import { api, download } from "@/lib/api";
 import { useAuth } from "@/lib/auth";
 import { money } from "@/lib/format";
@@ -94,6 +95,8 @@ interface PackRow {
 function ProductForm({ product, onClose }: { product: Product | null; onClose: () => void }) {
   const units = useList<Unit>("/catalog/units/", { page_size: 200 });
   const categories = useList<Named>("/catalog/categories/", { page_size: 200 });
+  const makers = useList<Named>("/catalog/manufacturers/", { page_size: 200 });
+  const asOptions = (rows: Named[]) => rows.map((row) => ({ value: String(row.id), label: row.name }));
   const { busy, error, run } = useAction();
   const [form, setForm] = useState({
     name: product?.name ?? "",
@@ -102,6 +105,7 @@ function ProductForm({ product, onClose }: { product: Product | null; onClose: (
     dosage_form: product?.dosage_form ?? "",
     sku: product?.sku ?? "",
     category: String(product?.category ?? ""),
+    manufacturer: String(product?.manufacturer ?? ""),
     base_unit: String(product?.base_unit ?? ""),
     purchase_price: product?.purchase_price ?? "",
     retail_price: product?.retail_price ?? "",
@@ -128,6 +132,7 @@ function ProductForm({ product, onClose }: { product: Product | null; onClose: (
     const body = {
       ...form,
       category: form.category ? Number(form.category) : null,
+      manufacturer: form.manufacturer ? Number(form.manufacturer) : null,
       base_unit: Number(form.base_unit),
       purchase_price: form.purchase_price || "0",
       retail_price: form.retail_price || "0",
@@ -180,10 +185,24 @@ function ProductForm({ product, onClose }: { product: Product | null; onClose: (
           <Field label="Strength"><Input {...text("strength")} placeholder="500mg" /></Field>
           <Field label="Dosage form"><Input {...text("dosage_form")} placeholder="Tablet" /></Field>
           <Field label="Category">
-            <Select {...text("category")}>
-              <option value="">—</option>
-              {categories.rows.map((c) => <option key={c.id} value={c.id}>{c.name}</option>)}
-            </Select>
+            <SearchSelect
+              label="Category"
+              className="w-full"
+              value={form.category}
+              onChange={(value) => set({ category: value })}
+              options={asOptions(categories.rows)}
+              emptyLabel="—"
+            />
+          </Field>
+          <Field label="Manufacturer">
+            <SearchSelect
+              label="Manufacturer"
+              className="w-full"
+              value={form.manufacturer}
+              onChange={(value) => set({ manufacturer: value })}
+              options={asOptions(makers.rows)}
+              emptyLabel="—"
+            />
           </Field>
         </div>
 
@@ -191,19 +210,26 @@ function ProductForm({ product, onClose }: { product: Product | null; onClose: (
           <legend className="px-1 text-[13px] font-medium text-muted">Units &amp; packaging</legend>
           <div className="grid gap-3 sm:grid-cols-3">
             <Field label="Base unit (smallest you sell)" hint={product ? "Cannot change after creation." : "Stock is counted in this unit."}>
-              <Select {...text("base_unit")} disabled={Boolean(product)}>
-                <option value="">Choose…</option>
-                {units.rows.map((u) => <option key={u.id} value={u.id}>{u.name}</option>)}
-              </Select>
+              <SearchSelect
+                label="Base unit"
+                className="w-full"
+                value={form.base_unit}
+                onChange={(value) => set({ base_unit: value })}
+                options={asOptions(units.rows)}
+                disabled={Boolean(product)}
+              />
             </Field>
           </div>
           {packs.map((pack, index) => (
             <div key={index} className="mt-2 flex items-end gap-2">
               <Field label="Pack">
-                <Select value={pack.unit} onChange={(e) => setPacks((rows) => rows.map((r, i) => (i === index ? { ...r, unit: e.target.value } : r)))}>
-                  <option value="">Choose…</option>
-                  {units.rows.filter((u) => String(u.id) !== form.base_unit).map((u) => <option key={u.id} value={u.id}>{u.name}</option>)}
-                </Select>
+                <SearchSelect
+                  label="Pack unit"
+                  className="w-44"
+                  value={pack.unit}
+                  onChange={(value) => setPacks((rows) => rows.map((row, position) => (position === index ? { ...row, unit: value } : row)))}
+                  options={asOptions(units.rows.filter((unit) => String(unit.id) !== form.base_unit))}
+                />
               </Field>
               <Field label="Contains (base units)">
                 <Input type="number" min={2} step={1} value={pack.factor} onChange={(e) => setPacks((rows) => rows.map((r, i) => (i === index ? { ...r, factor: e.target.value } : r)))} className="num" />

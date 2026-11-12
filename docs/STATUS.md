@@ -4,11 +4,15 @@ Last updated with the first commit. Section numbers refer to [`requirements.md`]
 
 ## Verified
 
-- Backend: 114 automated tests pass on PostgreSQL 16 (66 of them are one smoke check per read endpoint and report), including 25 concurrent sales against 10 units of
+- Backend: 115 automated tests pass on PostgreSQL 16 (66 of them are one smoke check per read endpoint and report), including 25 concurrent sales against 10 units of
   stock (exactly 10 succeed), expired-batch refusal, GRN confirmed twice (stock once), returns and
   cancellations preserving history, branch isolation, role restrictions, alert de-duplication, and
   stock valuation = stock ledger = Inventory GL account, and gross profit agreeing across the sales report, the
   per-medicine report and the profit & loss statement.
+- Point of sale: driven in a browser against the seeded shop — two carts open at once keep their own
+  lines and customers, a line was sold from a named batch, a customer was found by typing part of their
+  name, and a full return produced a credit note. Every dropdown long enough to need it now filters as
+  you type (customer, supplier, category, manufacturer, unit, batch, expense account).
 - Sample data: `python manage.py seed_data` builds a 30-medicine catalogue with pack photos and
   60 days of trading (around 900 invoices, 243 batches, 21 goods received notes, alerts and an
   order list) in under a minute. On the seeded database the trial balance balances, the stock
@@ -45,7 +49,7 @@ Last updated with the first commit. Section numbers refer to [`requirements.md`]
 | 4 | Units & packaging | Per-medicine packs with base-unit factors, whole numbers only, conversion changes audited |
 | 5 | Batch inventory | Batches, FEFO/FIFO, expiry and block rules, ledger, adjustments with approval, low/out/near-expiry |
 | 6 | Barcodes | EAN/UPC/GTIN validation, in-store EAN-13 generation, USB scanner in POS, camera scan on phone |
-| 7 | POS | Search/scan, box/strip/tablet, discounts, tax, split payments, credit sales, hold/resume, cancel, returns, 80mm and A4 printing, reprint, shifts |
+| 7 | POS | Search/scan, box/strip/tablet, **a cart per customer so several can be served at once**, **returns taken at the counter with a printable credit note**, **a batch chooser per line when FEFO is not what the customer needs**, **new customers added without leaving the till**, discounts, tax, split payments, credit sales, park/resume on the server, cancel, 80mm and A4 printing, reprint, shifts |
 | 8 | Purchasing | Requisitions, POs with approval, partial receiving, GRN with batch/expiry, supplier ledger, payments, supplier returns, supplier prices |
 | 9 | Smart alerts & reordering | Threshold alerts without duplicates, Add to Order List / Skip, suggested quantity (target − free − on order), reset on recovery, group by supplier, convert to POs, status tracking |
 | 10 | Mobile app | Login, branch selection, role-based tabs, alerts with actions, order list, search, stock/batch/expiry, scanner, adjustment requests, manager dashboard, notification history, deep links, offline read-only cache |

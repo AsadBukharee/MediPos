@@ -6,7 +6,7 @@ smart reorder alerts, double-entry accounts and reports. One repository, three a
 | Folder | What it is | Stack |
 | --- | --- | --- |
 | [`backend/`](backend) | The API and every business rule | Django 5.2, Django REST Framework, PostgreSQL, Celery + Redis |
-| [`frontend/`](frontend) | Web app: POS, inventory, purchasing, sales-trend charts, reports, accounts | Next.js 16 (App Router), TypeScript, Tailwind |
+| [`frontend/`](frontend) | Web app: multi-cart POS with counter returns, inventory, purchasing, sales-trend charts, reports, accounts | Next.js 16 (App Router), TypeScript, Tailwind |
 | [`phone/`](phone) | Mobile app: stock alerts, order list, barcode scan, batch look-up | React Native, Expo SDK 58, TypeScript |
 
 The web and phone apps hold no business logic. Prices, tax, discounts limits, stock deduction and

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { SearchSelect } from "@/components/search-select";
 import { Button, Card, DataTable, Field, Input, Modal, Notice, PageHeader, Select, Tabs } from "@/components/ui";
 import { api } from "@/lib/api";
 import { useAuth } from "@/lib/auth";
@@ -130,10 +131,15 @@ function ExpenseModal({ onClose }: { onClose: () => void }) {
       <div className="grid gap-3 sm:grid-cols-2">
         <div className="sm:col-span-2"><Notice>{error}</Notice></div>
         <Field label="Expense account">
-          <Select value={form.account} onChange={(e) => setForm((f) => ({ ...f, account: e.target.value }))}>
-            <option value="">Choose…</option>
-            {accounts.rows.filter((a) => a.type === "expense").map((a) => <option key={a.id} value={a.id}>{a.code} {a.name}</option>)}
-          </Select>
+          <SearchSelect
+            label="Expense account"
+            className="w-full"
+            value={form.account}
+            onChange={(value) => setForm((previous) => ({ ...previous, account: value }))}
+            options={accounts.rows
+              .filter((account) => account.type === "expense")
+              .map((account) => ({ value: String(account.id), label: account.name, hint: account.code }))}
+          />
         </Field>
         <Field label="Amount"><Input inputMode="decimal" className="num" value={form.amount} onChange={(e) => setForm((f) => ({ ...f, amount: e.target.value.replace(/[^\d.]/g, "") }))} /></Field>
         <Field label="Paid from">

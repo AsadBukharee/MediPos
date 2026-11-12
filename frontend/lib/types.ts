@@ -149,6 +149,7 @@ export interface SaleItem {
   tax_amount: string;
   line_total: string;
   returned_base: number;
+  refunded_amount: string;
 }
 
 export interface Sale {

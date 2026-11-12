@@ -66,7 +66,7 @@ export function Select({ className, ...props }: React.ComponentProps<"select">) 
   return <select {...props} className={cx(fieldClass(className), "pr-7")} />;
 }
 
-export function Card({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) {
+export function Card({ className, ...props }: React.ComponentProps<"div">) {
   return <div {...props} className={cx("rounded-lg border border-line bg-surface", className)} />;
 }
 

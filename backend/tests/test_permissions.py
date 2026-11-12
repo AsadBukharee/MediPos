@@ -128,3 +128,32 @@ def test_signed_in_user_lands_on_a_shop_not_a_warehouse(api, make_user, branch, 
     branches = api(user).get("/api/v1/auth/me/").data["branches"]
     assert [item["kind"] for item in branches] == ["store", "store", "warehouse"]
     assert branches[0]["name"] == "Main"  # alphabetical within the shops
+
+
+def test_pos_can_sell_from_a_named_batch(api, cashier, owner, branch, product, stock):
+    """FEFO is the default, but a pharmacist can hand over a specific batch."""
+    stock(branch, product, 20, "EARLY", days(30))
+    later = stock(branch, product, 20, "LATER", days(400))
+    c = api(cashier, branch)
+
+    offered = c.get(f"/api/v1/inventory/stock/{product.pk}/batches/").data
+    assert {row["batch_number"] for row in offered} == {"EARLY", "LATER"}
+
+    body = {"items": [{"product": product.pk, "quantity": 5, "batch": later.pk}],
+            "payments": [{"method": "cash", "amount": "10"}]}
+    sale = c.post("/api/v1/sales/", body, format="json")
+    assert sale.status_code == 201, sale.data
+    allocations = sale.data["items"][0]["allocations"]
+    assert [(row["batch_number"], row["quantity"]) for row in allocations] == [("LATER", 5)]
+
+    # The default still takes the earliest expiry.
+    auto = c.post("/api/v1/sales/", {"items": [{"product": product.pk, "quantity": 5}],
+                                     "payments": [{"method": "cash", "amount": "10"}]}, format="json")
+    assert auto.data["items"][0]["allocations"][0]["batch_number"] == "EARLY"
+
+    # Asking for more than that batch holds is refused, and nothing is taken from another.
+    greedy = c.post("/api/v1/sales/", {"items": [{"product": product.pk, "quantity": 16, "batch": later.pk}],
+                                       "payments": [{"method": "cash", "amount": "40"}]}, format="json")
+    assert greedy.status_code == 409 and greedy.data["code"] == "insufficient_stock"
+    later.refresh_from_db()
+    assert later.quantity_on_hand == 15

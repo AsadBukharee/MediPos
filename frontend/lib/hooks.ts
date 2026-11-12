@@ -48,6 +48,22 @@ export function useList<T>(path: string | null, params?: RequestOptions["params"
   return { ...result, rows, count };
 }
 
+/**
+ * Keyboard shortcuts for the whole page. The handler is kept in a ref, so the listener is
+ * registered once and still sees the latest state when a key is actually pressed.
+ */
+export function useGlobalKeys(handler: (event: KeyboardEvent) => void) {
+  const latest = useRef(handler);
+  useEffect(() => {
+    latest.current = handler;
+  });
+  useEffect(() => {
+    const listener = (event: KeyboardEvent) => latest.current(event);
+    window.addEventListener("keydown", listener);
+    return () => window.removeEventListener("keydown", listener);
+  }, []);
+}
+
 export function useDebounced<T>(value: T, delay = 250): T {
   const [debounced, setDebounced] = useState(value);
   useEffect(() => {

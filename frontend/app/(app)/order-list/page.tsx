@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { Button, Card, DataTable, Input, Notice, PageHeader, Select, Status } from "@/components/ui";
+import { SearchSelect } from "@/components/search-select";
+import { Button, Card, DataTable, Input, Notice, PageHeader, Status } from "@/components/ui";
 import { api } from "@/lib/api";
 import { useAuth } from "@/lib/auth";
 import { dateTime, qty } from "@/lib/format";
@@ -105,13 +106,22 @@ export default function OrderListPage() {
           {
             header: "Supplier",
             cell: (r) => (
-              <Select
-                value={r.supplier ?? ""} className="h-8 w-52" aria-label={`Supplier for ${r.product_name}`} disabled={!can("requisitions.manage")}
-                onChange={(e) => act(() => api(`/purchases/requisitions/items/${r.id}/`, { method: "PATCH", body: { supplier: e.target.value ? Number(e.target.value) : null } }))}
-              >
-                <option value="">Choose supplier…</option>
-                {suppliers.rows.map((s) => <option key={s.id} value={s.id}>{s.name}</option>)}
-              </Select>
+              <SearchSelect
+                label={`Supplier for ${r.product_name}`}
+                className="w-52"
+                value={r.supplier ? String(r.supplier) : ""}
+                disabled={!can("requisitions.manage")}
+                emptyLabel="Choose supplier…"
+                options={suppliers.rows.map((row) => ({ value: String(row.id), label: row.name }))}
+                onChange={(value) =>
+                  act(() =>
+                    api(`/purchases/requisitions/items/${r.id}/`, {
+                      method: "PATCH",
+                      body: { supplier: value ? Number(value) : null },
+                    }),
+                  )
+                }
+              />
             ),
           },
           { header: "Requested by", cell: (r) => r.requested_by_name },

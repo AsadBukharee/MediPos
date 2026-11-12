@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { SearchSelect } from "@/components/search-select";
 import { Button, DataTable, Field, Input, Modal, Notice, PageHeader, Select, Status, Tabs } from "@/components/ui";
 import { api } from "@/lib/api";
 import { useAuth } from "@/lib/auth";
@@ -154,10 +155,13 @@ function ReceiveModal({ onClose }: { onClose: () => void }) {
         <Notice>{error}</Notice>
         <div className="grid gap-3 sm:grid-cols-2">
           <Field label="Supplier">
-            <Select value={supplier} onChange={(e) => setSupplier(e.target.value)}>
-              <option value="">Choose…</option>
-              {suppliers.rows.map((s) => <option key={s.id} value={s.id}>{s.name}</option>)}
-            </Select>
+            <SearchSelect
+              label="Supplier"
+              className="w-full"
+              value={supplier}
+              onChange={setSupplier}
+              options={suppliers.rows.map((row) => ({ value: String(row.id), label: row.name, hint: row.phone }))}
+            />
           </Field>
           <Field label="Supplier invoice no."><Input value={invoice} onChange={(e) => setInvoice(e.target.value)} /></Field>
         </div>

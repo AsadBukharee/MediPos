@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { SearchSelect } from "@/components/search-select";
 import { Badge, Button, DataTable, Field, Input, Modal, Notice, PageHeader, Select, Status, Tabs } from "@/components/ui";
 import { api } from "@/lib/api";
 import { useAuth } from "@/lib/auth";
@@ -307,12 +308,19 @@ function AdjustmentForm({ onClose }: { onClose: () => void }) {
           )}
         </Field>
         <Field label="Batch">
-          <Select value={batch} onChange={(e) => setBatch(e.target.value)} disabled={!product}>
-            <option value="">Choose…</option>
-            {batches.rows.map((b) => (
-              <option key={b.id} value={b.id}>{b.batch_number} · exp {date(b.expiry_date)} · {qty(b.quantity_on_hand)} on hand</option>
-            ))}
-          </Select>
+          <SearchSelect
+            label="Batch"
+            className="w-full"
+            value={batch}
+            onChange={setBatch}
+            disabled={!product}
+            loading={batches.loading}
+            options={batches.rows.map((row) => ({
+              value: String(row.id),
+              label: row.batch_number,
+              hint: `exp ${date(row.expiry_date)} · ${qty(row.quantity_on_hand)} on hand`,
+            }))}
+          />
         </Field>
         <div className="grid grid-cols-2 gap-3">
           <Field label="Change in base units" hint="Negative removes stock, e.g. -5">
