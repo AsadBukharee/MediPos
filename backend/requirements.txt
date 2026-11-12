@@ -8,6 +8,7 @@ celery>=5.5,<6
 redis>=5
 psycopg[binary]>=3.2,<4
 dj-database-url>=3
+python-dotenv>=1.0
 gunicorn>=23
 whitenoise>=6.9
 firebase-admin>=6.6

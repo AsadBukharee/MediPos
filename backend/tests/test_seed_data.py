@@ -99,3 +99,19 @@ def test_it_refuses_to_run_outside_development(seeded, settings):
     settings.DEBUG = False
     with pytest.raises(CommandError, match="meant for development"):
         call_command("seed_data", days=1, verbosity=0)
+
+
+def test_reset_replaces_the_sample_data_instead_of_doubling_it(seeded, settings):
+    """--reset has to leave one pharmacy behind, not two stacked on top of each other."""
+    settings.DEBUG = True
+    medicines, suppliers = Product.objects.count(), Supplier.objects.count()
+    call_command("seed_data", days=1, reset=True, password="Seeded-pass-2026", no_images=True, verbosity=0)
+
+    assert Product.objects.count() == medicines   # the fixtures load by primary key
+    assert Supplier.objects.count() == suppliers
+    assert Sale.objects.exists()
+    assert Sale.objects.dates("completed_at", "day").count() <= 2
+    assert StockMovement.objects.aggregate(total=Sum("quantity"))["total"] == \
+        Batch.objects.aggregate(total=Sum("quantity_on_hand"))["total"]
+    rows = trial_balance(branches=list(Branch.objects.all()))
+    assert sum(row["debit"] for row in rows) == sum(row["credit"] for row in rows)

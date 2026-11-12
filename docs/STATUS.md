@@ -4,7 +4,7 @@ Last updated with the first commit. Section numbers refer to [`requirements.md`]
 
 ## Verified
 
-- Backend: 113 automated tests pass on PostgreSQL 16 (66 of them are one smoke check per read endpoint and report), including 25 concurrent sales against 10 units of
+- Backend: 114 automated tests pass on PostgreSQL 16 (66 of them are one smoke check per read endpoint and report), including 25 concurrent sales against 10 units of
   stock (exactly 10 succeed), expired-batch refusal, GRN confirmed twice (stock once), returns and
   cancellations preserving history, branch isolation, role restrictions, alert de-duplication, and
   stock valuation = stock ledger = Inventory GL account, and gross profit agreeing across the sales report, the

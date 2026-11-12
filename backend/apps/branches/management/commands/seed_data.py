@@ -153,7 +153,17 @@ class Command(BaseCommand):
     def reset(self):
         tables = [django_apps.get_model(label)._meta.db_table for label in TRANSACTIONAL]
         with connection.cursor() as cursor:
-            cursor.execute(f"TRUNCATE TABLE {', '.join(tables)} RESTART IDENTITY CASCADE")
+            if connection.vendor == "postgresql":
+                cursor.execute(f"TRUNCATE TABLE {', '.join(tables)} RESTART IDENTITY CASCADE")
+            else:
+                # SQLite has no TRUNCATE. These tables reference each other in both directions
+                # (a supplier payment points at a goods received note, an expiry alert at a
+                # batch), so there is no delete order that satisfies every key: turn the checks
+                # off for the sweep, then let Django put them back and verify.
+                with connection.constraint_checks_disabled():
+                    for table in tables:
+                        cursor.execute(f'DELETE FROM "{table}"')
+                connection.check_constraints(table_names=tables)
         self.say(f"cleared {len(tables)} tables")
 
     def load_fixtures(self):
