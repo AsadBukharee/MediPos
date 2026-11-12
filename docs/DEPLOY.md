@@ -145,5 +145,9 @@ On Coolify: create a **Docker Compose** resource from this repository, paste the
 terminates TLS, so leave `SECURE_SSL_REDIRECT=1`. Redeploy the frontend after changing
 `NEXT_PUBLIC_API_URL`, since it is a build-time value.
 
+Uploaded files — medicine photos and prescription scans — live in `MEDIA_ROOT`, which the compose
+file keeps on a named volume. Django serves them at `/media/` by default; for a busy shop put a web
+server or CDN in front of that path and set `SERVE_MEDIA=0`.
+
 Mixing the two is fine and common: API on a VPS or behind a tunnel, web app on Vercel. The API is
 the only service that needs the database, Redis and the Celery workers.

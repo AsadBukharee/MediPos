@@ -4,11 +4,16 @@ Last updated with the first commit. Section numbers refer to [`requirements.md`]
 
 ## Verified
 
-- Backend: 106 automated tests pass on PostgreSQL 16 (66 of them are one smoke check per read endpoint and report), including 25 concurrent sales against 10 units of
+- Backend: 113 automated tests pass on PostgreSQL 16 (66 of them are one smoke check per read endpoint and report), including 25 concurrent sales against 10 units of
   stock (exactly 10 succeed), expired-batch refusal, GRN confirmed twice (stock once), returns and
   cancellations preserving history, branch isolation, role restrictions, alert de-duplication, and
   stock valuation = stock ledger = Inventory GL account, and gross profit agreeing across the sales report, the
   per-medicine report and the profit & loss statement.
+- Sample data: `python manage.py seed_data` builds a 30-medicine catalogue with pack photos and
+  60 days of trading (around 900 invoices, 243 batches, 21 goods received notes, alerts and an
+  order list) in under a minute. On the seeded database the trial balance balances, the stock
+  ledger total equals the batches on hand, the stock valuation equals the Inventory account and
+  no batch is negative — all asserted by tests. Every page was then opened in a browser against it.
 - Sales trends: the chart was driven in a browser against 218 seeded sales — five medicines
   picked through the search-and-tick dropdown render five distinct lines, the crosshair reads out
   every series at once, keyboard arrows move it, removing a medicine leaves the others' colours
@@ -36,7 +41,7 @@ Last updated with the first commit. Section numbers refer to [`requirements.md`]
 | # | Area | Notes |
 | --- | --- | --- |
 | 2 | Authentication & permissions | JWT with rotation and blacklist, 8 roles, branch membership, discount limits per user and per medicine, password change/reset, rate-limited auth, activity log |
-| 3 | Medicine catalog | All listed fields, CSV import/export, duplicate detection, multiple barcodes |
+| 3 | Medicine catalog | All listed fields, product images (shown in the list, uploaded from the form), CSV import/export, duplicate detection, multiple barcodes |
 | 4 | Units & packaging | Per-medicine packs with base-unit factors, whole numbers only, conversion changes audited |
 | 5 | Batch inventory | Batches, FEFO/FIFO, expiry and block rules, ledger, adjustments with approval, low/out/near-expiry |
 | 6 | Barcodes | EAN/UPC/GTIN validation, in-store EAN-13 generation, USB scanner in POS, camera scan on phone |

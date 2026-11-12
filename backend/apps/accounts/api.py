@@ -42,7 +42,9 @@ class MeSerializer(serializers.ModelSerializer):
         return sorted(obj.permission_codes)
 
     def get_branches(self, obj) -> list[dict]:
-        return BranchBriefSerializer(obj.accessible_branches(), many=True).data
+        # Shops before warehouses: the client opens on the first one, and nobody sells from a
+        # warehouse, so defaulting there shows an empty till and an empty invoice list.
+        return BranchBriefSerializer(obj.accessible_branches().order_by("kind", "name"), many=True).data
 
 
 class LoginSerializer(TokenObtainPairSerializer):

@@ -25,7 +25,7 @@ Deployment, including the web app on Vercel with the API behind a tunnel, is in
 cp .env.example .env          # set DJANGO_SECRET_KEY and POSTGRES_PASSWORD at least
 docker compose up -d --build
 docker compose exec backend python manage.py createsuperuser   # your owner account
-docker compose exec backend python manage.py seed_demo         # optional demo medicines and stock
+docker compose exec backend python manage.py seed_data --force # optional: a shop's worth of sample data
 ```
 
 Web app on http://localhost:3000, API on http://localhost:8000. For plain-HTTP local use set
@@ -61,10 +61,35 @@ python -m venv .venv && . .venv/bin/activate
 pip install -r requirements-dev.txt
 cp .env.example .env && set -a && . ./.env && set +a
 python manage.py migrate
-python manage.py seed_demo --owner admin --password '<choose a password>'
+python manage.py seed_data          # sample pharmacy: catalogue, stock, 60 days of trading
 python manage.py runserver
 pytest                              # needs PostgreSQL for the concurrency test
 ```
+
+### Sample data
+
+`seed_data` loads the fixtures in `backend/apps/*/fixtures/` — 30 medicines with packs, barcodes and
+pack photos, 12 categories, 12 manufacturers, 10 suppliers with their price lists, 12 customers,
+3 branches and a user for every role — then *trades* with them: opening stock in batches (some
+short-dated, some already expired), weekly deliveries, purchase orders and goods received notes in
+every state, around 900 invoices spread over 60 days, returns, stock adjustments awaiting approval,
+supplier and customer payments, expenses, low-stock alerts and an order list.
+
+Everything that moves stock or money goes through the same services the API uses, so the stock
+ledger, the batches and the journal reconcile exactly as they would in real use — the tests in
+`backend/tests/test_seed_data.py` assert it.
+
+```bash
+python manage.py seed_data                 # master data + 60 days of trading
+python manage.py seed_data --days 120      # a longer history
+python manage.py seed_data --reset         # wipe what a previous run made, then seed again
+python manage.py seed_data --master-only   # catalogue, suppliers, customers and users only
+python manage.py seed_data --password '<yours>'   # otherwise a strong one is generated and printed
+```
+
+It prints the sign-in details at the end and refuses to run with `DEBUG` off, or over a database
+that already has sales, unless you pass `--force`. Medicine images land in `MEDIA_ROOT`; Django
+serves them itself unless you set `SERVE_MEDIA=0` and put a web server or CDN on `/media/`.
 
 Without `REDIS_URL` Celery tasks run inline, so the backend works with only PostgreSQL.
 

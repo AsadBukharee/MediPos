@@ -1,0 +1,80 @@
+[
+  {
+    "model": "accounting.account",
+    "pk": 101,
+    "fields": {
+      "code": "6100",
+      "name": "Rent",
+      "type": "expense",
+      "is_system": false,
+      "is_active": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "accounting.account",
+    "pk": 102,
+    "fields": {
+      "code": "6200",
+      "name": "Utilities",
+      "type": "expense",
+      "is_system": false,
+      "is_active": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "accounting.account",
+    "pk": 103,
+    "fields": {
+      "code": "6300",
+      "name": "Salaries and wages",
+      "type": "expense",
+      "is_system": false,
+      "is_active": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "accounting.account",
+    "pk": 104,
+    "fields": {
+      "code": "6400",
+      "name": "Transport and delivery",
+      "type": "expense",
+      "is_system": false,
+      "is_active": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "accounting.account",
+    "pk": 105,
+    "fields": {
+      "code": "6500",
+      "name": "Marketing",
+      "type": "expense",
+      "is_system": false,
+      "is_active": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "accounting.account",
+    "pk": 106,
+    "fields": {
+      "code": "6600",
+      "name": "Repairs and maintenance",
+      "type": "expense",
+      "is_system": false,
+      "is_active": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  }
+]

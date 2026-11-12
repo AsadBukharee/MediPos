@@ -58,6 +58,8 @@ export interface Product {
   manufacturer_name: string;
   requires_prescription: boolean;
   is_active: boolean;
+  /** Absolute URL of the pack photo, or null when the medicine has none. */
+  image: string | null;
   base_unit: number;
   base_unit_name: string;
   purchase_price: string;

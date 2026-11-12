@@ -1,0 +1,44 @@
+[
+  {
+    "model": "branches.branch",
+    "pk": 1,
+    "fields": {
+      "name": "Main Pharmacy",
+      "code": "main",
+      "kind": "store",
+      "address": "Shop 4, Tariq Road, Karachi",
+      "phone": "+92 21 3456 7890",
+      "is_active": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "branches.branch",
+    "pk": 2,
+    "fields": {
+      "name": "Gulshan Branch",
+      "code": "gul",
+      "kind": "store",
+      "address": "Block 13-D, Gulshan-e-Iqbal, Karachi",
+      "phone": "+92 21 3498 1122",
+      "is_active": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "branches.branch",
+    "pk": 3,
+    "fields": {
+      "name": "Central Warehouse",
+      "code": "whse",
+      "kind": "warehouse",
+      "address": "Plot 22, SITE Area, Karachi",
+      "phone": "+92 21 3257 6600",
+      "is_active": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  }
+]

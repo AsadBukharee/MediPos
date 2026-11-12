@@ -1,0 +1,1342 @@
+[
+  {
+    "model": "suppliers.supplier",
+    "pk": 1,
+    "fields": {
+      "name": "Muller & Phipps Pakistan",
+      "contact_person": "Imran Qureshi",
+      "phone": "+92 21 111 647 647",
+      "email": "orders@mpakistan.example",
+      "address": "Korangi, Karachi",
+      "tax_number": "37000001-9",
+      "opening_balance": "0.00",
+      "payment_terms_days": 30,
+      "is_active": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplier",
+    "pk": 2,
+    "fields": {
+      "name": "United Distributors Pakistan",
+      "contact_person": "Sana Rafiq",
+      "phone": "+92 21 3453 1122",
+      "email": "sales@udl.example",
+      "address": "SITE Area, Karachi",
+      "tax_number": "37000002-9",
+      "opening_balance": "0.00",
+      "payment_terms_days": 30,
+      "is_active": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplier",
+    "pk": 3,
+    "fields": {
+      "name": "Zafa Distributors",
+      "contact_person": "Bilal Ahmed",
+      "phone": "+92 42 3578 9900",
+      "email": "info@zafadist.example",
+      "address": "Township, Lahore",
+      "tax_number": "37000003-9",
+      "opening_balance": "0.00",
+      "payment_terms_days": 15,
+      "is_active": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplier",
+    "pk": 4,
+    "fields": {
+      "name": "Premier Agencies",
+      "contact_person": "Hira Sheikh",
+      "phone": "+92 51 2890 334",
+      "email": "premier@agencies.example",
+      "address": "Blue Area, Islamabad",
+      "tax_number": "37000004-9",
+      "opening_balance": "0.00",
+      "payment_terms_days": 21,
+      "is_active": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplier",
+    "pk": 5,
+    "fields": {
+      "name": "Hilton Pharma Sales",
+      "contact_person": "Owais Khan",
+      "phone": "+92 21 3466 7788",
+      "email": "trade@hiltonsales.example",
+      "address": "Shahrah-e-Faisal, Karachi",
+      "tax_number": "37000005-9",
+      "opening_balance": "0.00",
+      "payment_terms_days": 30,
+      "is_active": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplier",
+    "pk": 6,
+    "fields": {
+      "name": "Getz Trade House",
+      "contact_person": "Nadia Aslam",
+      "phone": "+92 21 3511 2233",
+      "email": "trade@getzhouse.example",
+      "address": "Korangi Creek, Karachi",
+      "tax_number": "37000006-9",
+      "opening_balance": "0.00",
+      "payment_terms_days": 45,
+      "is_active": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplier",
+    "pk": 7,
+    "fields": {
+      "name": "Searle Direct",
+      "contact_person": "Faisal Mehmood",
+      "phone": "+92 21 3472 9090",
+      "email": "direct@searle.example",
+      "address": "Clifton, Karachi",
+      "tax_number": "37000007-9",
+      "opening_balance": "0.00",
+      "payment_terms_days": 30,
+      "is_active": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplier",
+    "pk": 8,
+    "fields": {
+      "name": "Highnoon Depot Lahore",
+      "contact_person": "Ayesha Tariq",
+      "phone": "+92 42 3517 4455",
+      "email": "depot@highnoon.example",
+      "address": "Raiwind Road, Lahore",
+      "tax_number": "37000008-9",
+      "opening_balance": "0.00",
+      "payment_terms_days": 15,
+      "is_active": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplier",
+    "pk": 9,
+    "fields": {
+      "name": "Pharmacare Logistics",
+      "contact_person": "Usman Javed",
+      "phone": "+92 61 4512 330",
+      "email": "hello@pharmacare.example",
+      "address": "Bosan Road, Multan",
+      "tax_number": "37000009-9",
+      "opening_balance": "0.00",
+      "payment_terms_days": 21,
+      "is_active": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplier",
+    "pk": 10,
+    "fields": {
+      "name": "Noble Medical Supplies",
+      "contact_person": "Rabia Noor",
+      "phone": "+92 91 5841 220",
+      "email": "noble@medsupply.example",
+      "address": "University Road, Peshawar",
+      "tax_number": "37000010-9",
+      "opening_balance": "0.00",
+      "payment_terms_days": 30,
+      "is_active": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplierproduct",
+    "pk": 1,
+    "fields": {
+      "supplier": 2,
+      "product": 1,
+      "packaging": null,
+      "price": "1.2000",
+      "supplier_sku": "S02-001",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplierproduct",
+    "pk": 2,
+    "fields": {
+      "supplier": 3,
+      "product": 1,
+      "packaging": null,
+      "price": "1.2720",
+      "supplier_sku": "S03-001",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplierproduct",
+    "pk": 3,
+    "fields": {
+      "supplier": 4,
+      "product": 1,
+      "packaging": null,
+      "price": "1.1640",
+      "supplier_sku": "S04-001",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplierproduct",
+    "pk": 4,
+    "fields": {
+      "supplier": 3,
+      "product": 2,
+      "packaging": null,
+      "price": "1.8000",
+      "supplier_sku": "S03-002",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplierproduct",
+    "pk": 5,
+    "fields": {
+      "supplier": 4,
+      "product": 2,
+      "packaging": null,
+      "price": "1.9080",
+      "supplier_sku": "S04-002",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplierproduct",
+    "pk": 6,
+    "fields": {
+      "supplier": 5,
+      "product": 2,
+      "packaging": null,
+      "price": "1.7460",
+      "supplier_sku": "S05-002",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplierproduct",
+    "pk": 7,
+    "fields": {
+      "supplier": 4,
+      "product": 3,
+      "packaging": null,
+      "price": "2.5000",
+      "supplier_sku": "S04-003",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplierproduct",
+    "pk": 8,
+    "fields": {
+      "supplier": 5,
+      "product": 3,
+      "packaging": null,
+      "price": "2.6500",
+      "supplier_sku": "S05-003",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplierproduct",
+    "pk": 9,
+    "fields": {
+      "supplier": 6,
+      "product": 3,
+      "packaging": null,
+      "price": "2.4250",
+      "supplier_sku": "S06-003",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplierproduct",
+    "pk": 10,
+    "fields": {
+      "supplier": 5,
+      "product": 4,
+      "packaging": null,
+      "price": "4.1000",
+      "supplier_sku": "S05-004",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplierproduct",
+    "pk": 11,
+    "fields": {
+      "supplier": 6,
+      "product": 4,
+      "packaging": null,
+      "price": "4.3460",
+      "supplier_sku": "S06-004",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplierproduct",
+    "pk": 12,
+    "fields": {
+      "supplier": 7,
+      "product": 4,
+      "packaging": null,
+      "price": "3.9770",
+      "supplier_sku": "S07-004",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplierproduct",
+    "pk": 13,
+    "fields": {
+      "supplier": 6,
+      "product": 5,
+      "packaging": null,
+      "price": "0.5500",
+      "supplier_sku": "S06-005",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplierproduct",
+    "pk": 14,
+    "fields": {
+      "supplier": 7,
+      "product": 5,
+      "packaging": null,
+      "price": "0.5830",
+      "supplier_sku": "S07-005",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplierproduct",
+    "pk": 15,
+    "fields": {
+      "supplier": 8,
+      "product": 5,
+      "packaging": null,
+      "price": "0.5335",
+      "supplier_sku": "S08-005",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplierproduct",
+    "pk": 16,
+    "fields": {
+      "supplier": 7,
+      "product": 6,
+      "packaging": null,
+      "price": "38.0000",
+      "supplier_sku": "S07-006",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplierproduct",
+    "pk": 17,
+    "fields": {
+      "supplier": 8,
+      "product": 6,
+      "packaging": null,
+      "price": "40.2800",
+      "supplier_sku": "S08-006",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplierproduct",
+    "pk": 18,
+    "fields": {
+      "supplier": 9,
+      "product": 6,
+      "packaging": null,
+      "price": "36.8600",
+      "supplier_sku": "S09-006",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplierproduct",
+    "pk": 19,
+    "fields": {
+      "supplier": 8,
+      "product": 7,
+      "packaging": null,
+      "price": "6.4000",
+      "supplier_sku": "S08-007",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplierproduct",
+    "pk": 20,
+    "fields": {
+      "supplier": 9,
+      "product": 7,
+      "packaging": null,
+      "price": "6.7840",
+      "supplier_sku": "S09-007",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplierproduct",
+    "pk": 21,
+    "fields": {
+      "supplier": 10,
+      "product": 7,
+      "packaging": null,
+      "price": "6.2080",
+      "supplier_sku": "S10-007",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplierproduct",
+    "pk": 22,
+    "fields": {
+      "supplier": 9,
+      "product": 8,
+      "packaging": null,
+      "price": "3.2000",
+      "supplier_sku": "S09-008",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplierproduct",
+    "pk": 23,
+    "fields": {
+      "supplier": 10,
+      "product": 8,
+      "packaging": null,
+      "price": "3.3920",
+      "supplier_sku": "S10-008",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplierproduct",
+    "pk": 24,
+    "fields": {
+      "supplier": 1,
+      "product": 8,
+      "packaging": null,
+      "price": "3.1040",
+      "supplier_sku": "S01-008",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplierproduct",
+    "pk": 25,
+    "fields": {
+      "supplier": 10,
+      "product": 9,
+      "packaging": null,
+      "price": "22.0000",
+      "supplier_sku": "S10-009",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplierproduct",
+    "pk": 26,
+    "fields": {
+      "supplier": 1,
+      "product": 9,
+      "packaging": null,
+      "price": "23.3200",
+      "supplier_sku": "S01-009",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplierproduct",
+    "pk": 27,
+    "fields": {
+      "supplier": 2,
+      "product": 9,
+      "packaging": null,
+      "price": "21.3400",
+      "supplier_sku": "S02-009",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplierproduct",
+    "pk": 28,
+    "fields": {
+      "supplier": 1,
+      "product": 10,
+      "packaging": null,
+      "price": "14.0000",
+      "supplier_sku": "S01-010",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplierproduct",
+    "pk": 29,
+    "fields": {
+      "supplier": 2,
+      "product": 10,
+      "packaging": null,
+      "price": "14.8400",
+      "supplier_sku": "S02-010",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplierproduct",
+    "pk": 30,
+    "fields": {
+      "supplier": 3,
+      "product": 10,
+      "packaging": null,
+      "price": "13.5800",
+      "supplier_sku": "S03-010",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplierproduct",
+    "pk": 31,
+    "fields": {
+      "supplier": 2,
+      "product": 11,
+      "packaging": null,
+      "price": "26.0000",
+      "supplier_sku": "S02-011",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplierproduct",
+    "pk": 32,
+    "fields": {
+      "supplier": 3,
+      "product": 11,
+      "packaging": null,
+      "price": "27.5600",
+      "supplier_sku": "S03-011",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplierproduct",
+    "pk": 33,
+    "fields": {
+      "supplier": 4,
+      "product": 11,
+      "packaging": null,
+      "price": "25.2200",
+      "supplier_sku": "S04-011",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplierproduct",
+    "pk": 34,
+    "fields": {
+      "supplier": 3,
+      "product": 12,
+      "packaging": null,
+      "price": "4.8000",
+      "supplier_sku": "S03-012",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplierproduct",
+    "pk": 35,
+    "fields": {
+      "supplier": 4,
+      "product": 12,
+      "packaging": null,
+      "price": "5.0880",
+      "supplier_sku": "S04-012",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplierproduct",
+    "pk": 36,
+    "fields": {
+      "supplier": 5,
+      "product": 12,
+      "packaging": null,
+      "price": "4.6560",
+      "supplier_sku": "S05-012",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplierproduct",
+    "pk": 37,
+    "fields": {
+      "supplier": 4,
+      "product": 13,
+      "packaging": null,
+      "price": "11.0000",
+      "supplier_sku": "S04-013",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplierproduct",
+    "pk": 38,
+    "fields": {
+      "supplier": 5,
+      "product": 13,
+      "packaging": null,
+      "price": "11.6600",
+      "supplier_sku": "S05-013",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplierproduct",
+    "pk": 39,
+    "fields": {
+      "supplier": 6,
+      "product": 13,
+      "packaging": null,
+      "price": "10.6700",
+      "supplier_sku": "S06-013",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplierproduct",
+    "pk": 40,
+    "fields": {
+      "supplier": 5,
+      "product": 14,
+      "packaging": null,
+      "price": "2.1000",
+      "supplier_sku": "S05-014",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplierproduct",
+    "pk": 41,
+    "fields": {
+      "supplier": 6,
+      "product": 14,
+      "packaging": null,
+      "price": "2.2260",
+      "supplier_sku": "S06-014",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplierproduct",
+    "pk": 42,
+    "fields": {
+      "supplier": 7,
+      "product": 14,
+      "packaging": null,
+      "price": "2.0370",
+      "supplier_sku": "S07-014",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplierproduct",
+    "pk": 43,
+    "fields": {
+      "supplier": 6,
+      "product": 15,
+      "packaging": null,
+      "price": "15.5000",
+      "supplier_sku": "S06-015",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplierproduct",
+    "pk": 44,
+    "fields": {
+      "supplier": 7,
+      "product": 15,
+      "packaging": null,
+      "price": "16.4300",
+      "supplier_sku": "S07-015",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplierproduct",
+    "pk": 45,
+    "fields": {
+      "supplier": 8,
+      "product": 15,
+      "packaging": null,
+      "price": "15.0350",
+      "supplier_sku": "S08-015",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplierproduct",
+    "pk": 46,
+    "fields": {
+      "supplier": 7,
+      "product": 16,
+      "packaging": null,
+      "price": "48.0000",
+      "supplier_sku": "S07-016",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplierproduct",
+    "pk": 47,
+    "fields": {
+      "supplier": 8,
+      "product": 16,
+      "packaging": null,
+      "price": "50.8800",
+      "supplier_sku": "S08-016",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplierproduct",
+    "pk": 48,
+    "fields": {
+      "supplier": 9,
+      "product": 16,
+      "packaging": null,
+      "price": "46.5600",
+      "supplier_sku": "S09-016",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplierproduct",
+    "pk": 49,
+    "fields": {
+      "supplier": 8,
+      "product": 17,
+      "packaging": null,
+      "price": "0.9000",
+      "supplier_sku": "S08-017",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplierproduct",
+    "pk": 50,
+    "fields": {
+      "supplier": 9,
+      "product": 17,
+      "packaging": null,
+      "price": "0.9540",
+      "supplier_sku": "S09-017",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplierproduct",
+    "pk": 51,
+    "fields": {
+      "supplier": 10,
+      "product": 17,
+      "packaging": null,
+      "price": "0.8730",
+      "supplier_sku": "S10-017",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplierproduct",
+    "pk": 52,
+    "fields": {
+      "supplier": 9,
+      "product": 18,
+      "packaging": null,
+      "price": "12.0000",
+      "supplier_sku": "S09-018",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplierproduct",
+    "pk": 53,
+    "fields": {
+      "supplier": 10,
+      "product": 18,
+      "packaging": null,
+      "price": "12.7200",
+      "supplier_sku": "S10-018",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplierproduct",
+    "pk": 54,
+    "fields": {
+      "supplier": 1,
+      "product": 18,
+      "packaging": null,
+      "price": "11.6400",
+      "supplier_sku": "S01-018",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplierproduct",
+    "pk": 55,
+    "fields": {
+      "supplier": 10,
+      "product": 19,
+      "packaging": null,
+      "price": "9.6000",
+      "supplier_sku": "S10-019",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplierproduct",
+    "pk": 56,
+    "fields": {
+      "supplier": 1,
+      "product": 19,
+      "packaging": null,
+      "price": "10.1760",
+      "supplier_sku": "S01-019",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplierproduct",
+    "pk": 57,
+    "fields": {
+      "supplier": 2,
+      "product": 19,
+      "packaging": null,
+      "price": "9.3120",
+      "supplier_sku": "S02-019",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplierproduct",
+    "pk": 58,
+    "fields": {
+      "supplier": 1,
+      "product": 20,
+      "packaging": null,
+      "price": "310.0000",
+      "supplier_sku": "S01-020",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplierproduct",
+    "pk": 59,
+    "fields": {
+      "supplier": 2,
+      "product": 20,
+      "packaging": null,
+      "price": "328.6000",
+      "supplier_sku": "S02-020",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplierproduct",
+    "pk": 60,
+    "fields": {
+      "supplier": 3,
+      "product": 20,
+      "packaging": null,
+      "price": "300.7000",
+      "supplier_sku": "S03-020",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplierproduct",
+    "pk": 61,
+    "fields": {
+      "supplier": 2,
+      "product": 21,
+      "packaging": null,
+      "price": "7.2000",
+      "supplier_sku": "S02-021",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplierproduct",
+    "pk": 62,
+    "fields": {
+      "supplier": 3,
+      "product": 21,
+      "packaging": null,
+      "price": "7.6320",
+      "supplier_sku": "S03-021",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplierproduct",
+    "pk": 63,
+    "fields": {
+      "supplier": 4,
+      "product": 21,
+      "packaging": null,
+      "price": "6.9840",
+      "supplier_sku": "S04-021",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplierproduct",
+    "pk": 64,
+    "fields": {
+      "supplier": 3,
+      "product": 22,
+      "packaging": null,
+      "price": "1.6000",
+      "supplier_sku": "S03-022",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplierproduct",
+    "pk": 65,
+    "fields": {
+      "supplier": 4,
+      "product": 22,
+      "packaging": null,
+      "price": "1.6960",
+      "supplier_sku": "S04-022",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplierproduct",
+    "pk": 66,
+    "fields": {
+      "supplier": 5,
+      "product": 22,
+      "packaging": null,
+      "price": "1.5520",
+      "supplier_sku": "S05-022",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplierproduct",
+    "pk": 67,
+    "fields": {
+      "supplier": 4,
+      "product": 23,
+      "packaging": null,
+      "price": "68.0000",
+      "supplier_sku": "S04-023",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplierproduct",
+    "pk": 68,
+    "fields": {
+      "supplier": 5,
+      "product": 23,
+      "packaging": null,
+      "price": "72.0800",
+      "supplier_sku": "S05-023",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplierproduct",
+    "pk": 69,
+    "fields": {
+      "supplier": 6,
+      "product": 23,
+      "packaging": null,
+      "price": "65.9600",
+      "supplier_sku": "S06-023",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplierproduct",
+    "pk": 70,
+    "fields": {
+      "supplier": 5,
+      "product": 24,
+      "packaging": null,
+      "price": "92.0000",
+      "supplier_sku": "S05-024",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplierproduct",
+    "pk": 71,
+    "fields": {
+      "supplier": 6,
+      "product": 24,
+      "packaging": null,
+      "price": "97.5200",
+      "supplier_sku": "S06-024",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplierproduct",
+    "pk": 72,
+    "fields": {
+      "supplier": 7,
+      "product": 24,
+      "packaging": null,
+      "price": "89.2400",
+      "supplier_sku": "S07-024",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplierproduct",
+    "pk": 73,
+    "fields": {
+      "supplier": 6,
+      "product": 25,
+      "packaging": null,
+      "price": "5.4000",
+      "supplier_sku": "S06-025",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplierproduct",
+    "pk": 74,
+    "fields": {
+      "supplier": 7,
+      "product": 25,
+      "packaging": null,
+      "price": "5.7240",
+      "supplier_sku": "S07-025",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplierproduct",
+    "pk": 75,
+    "fields": {
+      "supplier": 8,
+      "product": 25,
+      "packaging": null,
+      "price": "5.2380",
+      "supplier_sku": "S08-025",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplierproduct",
+    "pk": 76,
+    "fields": {
+      "supplier": 7,
+      "product": 26,
+      "packaging": null,
+      "price": "6.8000",
+      "supplier_sku": "S07-026",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplierproduct",
+    "pk": 77,
+    "fields": {
+      "supplier": 8,
+      "product": 26,
+      "packaging": null,
+      "price": "7.2080",
+      "supplier_sku": "S08-026",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplierproduct",
+    "pk": 78,
+    "fields": {
+      "supplier": 9,
+      "product": 26,
+      "packaging": null,
+      "price": "6.5960",
+      "supplier_sku": "S09-026",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplierproduct",
+    "pk": 79,
+    "fields": {
+      "supplier": 8,
+      "product": 27,
+      "packaging": null,
+      "price": "1.0500",
+      "supplier_sku": "S08-027",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplierproduct",
+    "pk": 80,
+    "fields": {
+      "supplier": 9,
+      "product": 27,
+      "packaging": null,
+      "price": "1.1130",
+      "supplier_sku": "S09-027",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplierproduct",
+    "pk": 81,
+    "fields": {
+      "supplier": 10,
+      "product": 27,
+      "packaging": null,
+      "price": "1.0185",
+      "supplier_sku": "S10-027",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplierproduct",
+    "pk": 82,
+    "fields": {
+      "supplier": 9,
+      "product": 28,
+      "packaging": null,
+      "price": "24.0000",
+      "supplier_sku": "S09-028",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplierproduct",
+    "pk": 83,
+    "fields": {
+      "supplier": 10,
+      "product": 28,
+      "packaging": null,
+      "price": "25.4400",
+      "supplier_sku": "S10-028",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplierproduct",
+    "pk": 84,
+    "fields": {
+      "supplier": 1,
+      "product": 28,
+      "packaging": null,
+      "price": "23.2800",
+      "supplier_sku": "S01-028",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplierproduct",
+    "pk": 85,
+    "fields": {
+      "supplier": 10,
+      "product": 29,
+      "packaging": null,
+      "price": "55.0000",
+      "supplier_sku": "S10-029",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplierproduct",
+    "pk": 86,
+    "fields": {
+      "supplier": 1,
+      "product": 29,
+      "packaging": null,
+      "price": "58.3000",
+      "supplier_sku": "S01-029",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplierproduct",
+    "pk": 87,
+    "fields": {
+      "supplier": 2,
+      "product": 29,
+      "packaging": null,
+      "price": "53.3500",
+      "supplier_sku": "S02-029",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplierproduct",
+    "pk": 88,
+    "fields": {
+      "supplier": 1,
+      "product": 30,
+      "packaging": null,
+      "price": "1.4000",
+      "supplier_sku": "S01-030",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplierproduct",
+    "pk": 89,
+    "fields": {
+      "supplier": 2,
+      "product": 30,
+      "packaging": null,
+      "price": "1.4840",
+      "supplier_sku": "S02-030",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "suppliers.supplierproduct",
+    "pk": 90,
+    "fields": {
+      "supplier": 3,
+      "product": 30,
+      "packaging": null,
+      "price": "1.3580",
+      "supplier_sku": "S03-030",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  }
+]

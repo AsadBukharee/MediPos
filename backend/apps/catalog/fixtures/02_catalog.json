@@ -1,0 +1,3108 @@
+[
+  {
+    "model": "catalog.unit",
+    "pk": 1,
+    "fields": {
+      "name": "Tablet",
+      "abbreviation": "tab",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.unit",
+    "pk": 2,
+    "fields": {
+      "name": "Capsule",
+      "abbreviation": "cap",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.unit",
+    "pk": 3,
+    "fields": {
+      "name": "Strip",
+      "abbreviation": "strip",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.unit",
+    "pk": 4,
+    "fields": {
+      "name": "Box",
+      "abbreviation": "box",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.unit",
+    "pk": 5,
+    "fields": {
+      "name": "Carton",
+      "abbreviation": "ctn",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.unit",
+    "pk": 6,
+    "fields": {
+      "name": "Bottle",
+      "abbreviation": "btl",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.unit",
+    "pk": 7,
+    "fields": {
+      "name": "ml",
+      "abbreviation": "ml",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.unit",
+    "pk": 8,
+    "fields": {
+      "name": "Sachet",
+      "abbreviation": "sach",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.unit",
+    "pk": 9,
+    "fields": {
+      "name": "Vial",
+      "abbreviation": "vial",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.unit",
+    "pk": 10,
+    "fields": {
+      "name": "Tube",
+      "abbreviation": "tube",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.unit",
+    "pk": 11,
+    "fields": {
+      "name": "Inhaler",
+      "abbreviation": "inh",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.unit",
+    "pk": 12,
+    "fields": {
+      "name": "Ampoule",
+      "abbreviation": "amp",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 1,
+    "fields": {
+      "name": "Analgesics",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 2,
+    "fields": {
+      "name": "Antibiotics",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 3,
+    "fields": {
+      "name": "Gastro",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 4,
+    "fields": {
+      "name": "Diabetes",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 5,
+    "fields": {
+      "name": "Cardiac",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 6,
+    "fields": {
+      "name": "Respiratory",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 7,
+    "fields": {
+      "name": "Allergy",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 8,
+    "fields": {
+      "name": "Dermatology",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 9,
+    "fields": {
+      "name": "Vitamins & supplements",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 10,
+    "fields": {
+      "name": "Antiseptics",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 11,
+    "fields": {
+      "name": "Ophthalmic",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 12,
+    "fields": {
+      "name": "First aid",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.manufacturer",
+    "pk": 1,
+    "fields": {
+      "name": "GlaxoSmithKline",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.manufacturer",
+    "pk": 2,
+    "fields": {
+      "name": "Abbott Laboratories",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.manufacturer",
+    "pk": 3,
+    "fields": {
+      "name": "Getz Pharma",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.manufacturer",
+    "pk": 4,
+    "fields": {
+      "name": "Sanofi Aventis",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.manufacturer",
+    "pk": 5,
+    "fields": {
+      "name": "Merck Pakistan",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.manufacturer",
+    "pk": 6,
+    "fields": {
+      "name": "Novartis Pharma",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.manufacturer",
+    "pk": 7,
+    "fields": {
+      "name": "Servier Research",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.manufacturer",
+    "pk": 8,
+    "fields": {
+      "name": "Highnoon Laboratories",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.manufacturer",
+    "pk": 9,
+    "fields": {
+      "name": "The Searle Company",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.manufacturer",
+    "pk": 10,
+    "fields": {
+      "name": "Hilton Pharma",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.manufacturer",
+    "pk": 11,
+    "fields": {
+      "name": "Reckitt Benckiser",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.manufacturer",
+    "pk": 12,
+    "fields": {
+      "name": "Novo Nordisk",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 1,
+    "fields": {
+      "name": "Panadol",
+      "generic_name": "Paracetamol",
+      "brand": "Panadol",
+      "manufacturer": 1,
+      "category": 1,
+      "strength": "500mg",
+      "dosage_form": "Tablet",
+      "sku": "MED-0001",
+      "description": "Paracetamol 500mg · tablet · GlaxoSmithKline",
+      "image": "products/med-0001.png",
+      "requires_prescription": false,
+      "is_active": true,
+      "base_unit": 1,
+      "purchase_price": "1.20",
+      "retail_price": "1.70",
+      "wholesale_price": "1.5640",
+      "tax_rate": "0",
+      "max_discount_percent": "20.00",
+      "min_stock": 200,
+      "reorder_level": 400,
+      "max_stock": 1600,
+      "preferred_supplier": 2,
+      "duplicate_key": "panadol|500mg|tablet|1",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.productpackaging",
+    "pk": 1,
+    "fields": {
+      "product": 1,
+      "unit": 1,
+      "factor": 1,
+      "is_default_sale": true,
+      "is_default_purchase": false,
+      "can_sell": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.productpackaging",
+    "pk": 2,
+    "fields": {
+      "product": 1,
+      "unit": 3,
+      "factor": 10,
+      "is_default_sale": false,
+      "is_default_purchase": false,
+      "can_sell": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.productpackaging",
+    "pk": 3,
+    "fields": {
+      "product": 1,
+      "unit": 4,
+      "factor": 200,
+      "is_default_sale": false,
+      "is_default_purchase": true,
+      "can_sell": false,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.barcode",
+    "pk": 1,
+    "fields": {
+      "product": 1,
+      "packaging": 1,
+      "code": "8960000000016",
+      "is_primary": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.barcode",
+    "pk": 2,
+    "fields": {
+      "product": 1,
+      "packaging": 3,
+      "code": "8960000005011",
+      "is_primary": false,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 2,
+    "fields": {
+      "name": "Panadol Extra",
+      "generic_name": "Paracetamol + Caffeine",
+      "brand": "Panadol",
+      "manufacturer": 1,
+      "category": 1,
+      "strength": "500mg/65mg",
+      "dosage_form": "Tablet",
+      "sku": "MED-0002",
+      "description": "Paracetamol + Caffeine 500mg/65mg · tablet · GlaxoSmithKline",
+      "image": "products/med-0002.png",
+      "requires_prescription": false,
+      "is_active": true,
+      "base_unit": 1,
+      "purchase_price": "1.80",
+      "retail_price": "2.50",
+      "wholesale_price": "2.3000",
+      "tax_rate": "0",
+      "max_discount_percent": "20.00",
+      "min_stock": 100,
+      "reorder_level": 200,
+      "max_stock": 800,
+      "preferred_supplier": 3,
+      "duplicate_key": "panadol extra|500mg/65mg|tablet|1",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.productpackaging",
+    "pk": 4,
+    "fields": {
+      "product": 2,
+      "unit": 1,
+      "factor": 1,
+      "is_default_sale": true,
+      "is_default_purchase": false,
+      "can_sell": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.productpackaging",
+    "pk": 5,
+    "fields": {
+      "product": 2,
+      "unit": 3,
+      "factor": 10,
+      "is_default_sale": false,
+      "is_default_purchase": false,
+      "can_sell": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.productpackaging",
+    "pk": 6,
+    "fields": {
+      "product": 2,
+      "unit": 4,
+      "factor": 100,
+      "is_default_sale": false,
+      "is_default_purchase": true,
+      "can_sell": false,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.barcode",
+    "pk": 3,
+    "fields": {
+      "product": 2,
+      "packaging": 4,
+      "code": "8960000000023",
+      "is_primary": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.barcode",
+    "pk": 4,
+    "fields": {
+      "product": 2,
+      "packaging": 6,
+      "code": "8960000005028",
+      "is_primary": false,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 3,
+    "fields": {
+      "name": "Brufen",
+      "generic_name": "Ibuprofen",
+      "brand": "Brufen",
+      "manufacturer": 2,
+      "category": 1,
+      "strength": "400mg",
+      "dosage_form": "Tablet",
+      "sku": "MED-0003",
+      "description": "Ibuprofen 400mg · tablet · Abbott Laboratories",
+      "image": "products/med-0003.png",
+      "requires_prescription": false,
+      "is_active": true,
+      "base_unit": 1,
+      "purchase_price": "2.50",
+      "retail_price": "3.40",
+      "wholesale_price": "3.1280",
+      "tax_rate": "0",
+      "max_discount_percent": "20.00",
+      "min_stock": 90,
+      "reorder_level": 180,
+      "max_stock": 720,
+      "preferred_supplier": 4,
+      "duplicate_key": "brufen|400mg|tablet|2",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.productpackaging",
+    "pk": 7,
+    "fields": {
+      "product": 3,
+      "unit": 1,
+      "factor": 1,
+      "is_default_sale": true,
+      "is_default_purchase": false,
+      "can_sell": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.productpackaging",
+    "pk": 8,
+    "fields": {
+      "product": 3,
+      "unit": 3,
+      "factor": 10,
+      "is_default_sale": false,
+      "is_default_purchase": false,
+      "can_sell": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.productpackaging",
+    "pk": 9,
+    "fields": {
+      "product": 3,
+      "unit": 4,
+      "factor": 30,
+      "is_default_sale": false,
+      "is_default_purchase": true,
+      "can_sell": false,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.barcode",
+    "pk": 5,
+    "fields": {
+      "product": 3,
+      "packaging": 7,
+      "code": "8960000000030",
+      "is_primary": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.barcode",
+    "pk": 6,
+    "fields": {
+      "product": 3,
+      "packaging": 9,
+      "code": "8960000005035",
+      "is_primary": false,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 4,
+    "fields": {
+      "name": "Ponstan Forte",
+      "generic_name": "Mefenamic acid",
+      "brand": "Ponstan",
+      "manufacturer": 4,
+      "category": 1,
+      "strength": "500mg",
+      "dosage_form": "Tablet",
+      "sku": "MED-0004",
+      "description": "Mefenamic acid 500mg · tablet · Sanofi Aventis",
+      "image": "products/med-0004.png",
+      "requires_prescription": false,
+      "is_active": true,
+      "base_unit": 1,
+      "purchase_price": "4.10",
+      "retail_price": "5.60",
+      "wholesale_price": "5.1520",
+      "tax_rate": "0",
+      "max_discount_percent": "20.00",
+      "min_stock": 60,
+      "reorder_level": 120,
+      "max_stock": 480,
+      "preferred_supplier": 5,
+      "duplicate_key": "ponstan forte|500mg|tablet|4",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.productpackaging",
+    "pk": 10,
+    "fields": {
+      "product": 4,
+      "unit": 1,
+      "factor": 1,
+      "is_default_sale": true,
+      "is_default_purchase": false,
+      "can_sell": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.productpackaging",
+    "pk": 11,
+    "fields": {
+      "product": 4,
+      "unit": 3,
+      "factor": 10,
+      "is_default_sale": false,
+      "is_default_purchase": false,
+      "can_sell": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.productpackaging",
+    "pk": 12,
+    "fields": {
+      "product": 4,
+      "unit": 4,
+      "factor": 100,
+      "is_default_sale": false,
+      "is_default_purchase": true,
+      "can_sell": false,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.barcode",
+    "pk": 7,
+    "fields": {
+      "product": 4,
+      "packaging": 10,
+      "code": "8960000000047",
+      "is_primary": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.barcode",
+    "pk": 8,
+    "fields": {
+      "product": 4,
+      "packaging": 12,
+      "code": "8960000005042",
+      "is_primary": false,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 5,
+    "fields": {
+      "name": "Disprol Syrup",
+      "generic_name": "Paracetamol",
+      "brand": "Disprol",
+      "manufacturer": 1,
+      "category": 1,
+      "strength": "120mg/5ml",
+      "dosage_form": "Syrup",
+      "sku": "MED-0005",
+      "description": "Paracetamol 120mg/5ml · syrup · GlaxoSmithKline",
+      "image": "products/med-0005.png",
+      "requires_prescription": false,
+      "is_active": true,
+      "base_unit": 7,
+      "purchase_price": "0.55",
+      "retail_price": "0.80",
+      "wholesale_price": "0.7360",
+      "tax_rate": "0",
+      "max_discount_percent": "20.00",
+      "min_stock": 300,
+      "reorder_level": 600,
+      "max_stock": 2400,
+      "preferred_supplier": 6,
+      "duplicate_key": "disprol syrup|120mg/5ml|syrup|1",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.productpackaging",
+    "pk": 13,
+    "fields": {
+      "product": 5,
+      "unit": 7,
+      "factor": 1,
+      "is_default_sale": true,
+      "is_default_purchase": false,
+      "can_sell": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.productpackaging",
+    "pk": 14,
+    "fields": {
+      "product": 5,
+      "unit": 6,
+      "factor": 60,
+      "is_default_sale": false,
+      "is_default_purchase": true,
+      "can_sell": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.barcode",
+    "pk": 9,
+    "fields": {
+      "product": 5,
+      "packaging": 13,
+      "code": "8960000000054",
+      "is_primary": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.barcode",
+    "pk": 10,
+    "fields": {
+      "product": 5,
+      "packaging": 14,
+      "code": "8960000005059",
+      "is_primary": false,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 6,
+    "fields": {
+      "name": "Augmentin",
+      "generic_name": "Amoxicillin + Clavulanate",
+      "brand": "Augmentin",
+      "manufacturer": 1,
+      "category": 2,
+      "strength": "625mg",
+      "dosage_form": "Tablet",
+      "sku": "MED-0006",
+      "description": "Amoxicillin + Clavulanate 625mg · tablet · GlaxoSmithKline",
+      "image": "products/med-0006.png",
+      "requires_prescription": true,
+      "is_active": true,
+      "base_unit": 1,
+      "purchase_price": "38.00",
+      "retail_price": "46.00",
+      "wholesale_price": "42.3200",
+      "tax_rate": "0",
+      "max_discount_percent": "20.00",
+      "min_stock": 45,
+      "reorder_level": 90,
+      "max_stock": 360,
+      "preferred_supplier": 7,
+      "duplicate_key": "augmentin|625mg|tablet|1",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.productpackaging",
+    "pk": 15,
+    "fields": {
+      "product": 6,
+      "unit": 1,
+      "factor": 1,
+      "is_default_sale": true,
+      "is_default_purchase": false,
+      "can_sell": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.productpackaging",
+    "pk": 16,
+    "fields": {
+      "product": 6,
+      "unit": 3,
+      "factor": 6,
+      "is_default_sale": false,
+      "is_default_purchase": false,
+      "can_sell": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.productpackaging",
+    "pk": 17,
+    "fields": {
+      "product": 6,
+      "unit": 4,
+      "factor": 60,
+      "is_default_sale": false,
+      "is_default_purchase": true,
+      "can_sell": false,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.barcode",
+    "pk": 11,
+    "fields": {
+      "product": 6,
+      "packaging": 15,
+      "code": "8960000000061",
+      "is_primary": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.barcode",
+    "pk": 12,
+    "fields": {
+      "product": 6,
+      "packaging": 17,
+      "code": "8960000005066",
+      "is_primary": false,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 7,
+    "fields": {
+      "name": "Amoxil",
+      "generic_name": "Amoxicillin",
+      "brand": "Amoxil",
+      "manufacturer": 1,
+      "category": 2,
+      "strength": "250mg",
+      "dosage_form": "Capsule",
+      "sku": "MED-0007",
+      "description": "Amoxicillin 250mg · capsule · GlaxoSmithKline",
+      "image": "products/med-0007.png",
+      "requires_prescription": true,
+      "is_active": true,
+      "base_unit": 2,
+      "purchase_price": "6.40",
+      "retail_price": "8.50",
+      "wholesale_price": "7.8200",
+      "tax_rate": "0",
+      "max_discount_percent": "20.00",
+      "min_stock": 75,
+      "reorder_level": 150,
+      "max_stock": 600,
+      "preferred_supplier": 8,
+      "duplicate_key": "amoxil|250mg|capsule|1",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.productpackaging",
+    "pk": 18,
+    "fields": {
+      "product": 7,
+      "unit": 2,
+      "factor": 1,
+      "is_default_sale": true,
+      "is_default_purchase": false,
+      "can_sell": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.productpackaging",
+    "pk": 19,
+    "fields": {
+      "product": 7,
+      "unit": 3,
+      "factor": 10,
+      "is_default_sale": false,
+      "is_default_purchase": false,
+      "can_sell": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.productpackaging",
+    "pk": 20,
+    "fields": {
+      "product": 7,
+      "unit": 4,
+      "factor": 100,
+      "is_default_sale": false,
+      "is_default_purchase": true,
+      "can_sell": false,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.barcode",
+    "pk": 13,
+    "fields": {
+      "product": 7,
+      "packaging": 18,
+      "code": "8960000000078",
+      "is_primary": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.barcode",
+    "pk": 14,
+    "fields": {
+      "product": 7,
+      "packaging": 20,
+      "code": "8960000005073",
+      "is_primary": false,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 8,
+    "fields": {
+      "name": "Flagyl",
+      "generic_name": "Metronidazole",
+      "brand": "Flagyl",
+      "manufacturer": 4,
+      "category": 2,
+      "strength": "400mg",
+      "dosage_form": "Tablet",
+      "sku": "MED-0008",
+      "description": "Metronidazole 400mg · tablet · Sanofi Aventis",
+      "image": "products/med-0008.png",
+      "requires_prescription": true,
+      "is_active": true,
+      "base_unit": 1,
+      "purchase_price": "3.20",
+      "retail_price": "4.40",
+      "wholesale_price": "4.0480",
+      "tax_rate": "0",
+      "max_discount_percent": "20.00",
+      "min_stock": 75,
+      "reorder_level": 150,
+      "max_stock": 600,
+      "preferred_supplier": 9,
+      "duplicate_key": "flagyl|400mg|tablet|4",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.productpackaging",
+    "pk": 21,
+    "fields": {
+      "product": 8,
+      "unit": 1,
+      "factor": 1,
+      "is_default_sale": true,
+      "is_default_purchase": false,
+      "can_sell": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.productpackaging",
+    "pk": 22,
+    "fields": {
+      "product": 8,
+      "unit": 3,
+      "factor": 10,
+      "is_default_sale": false,
+      "is_default_purchase": false,
+      "can_sell": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.productpackaging",
+    "pk": 23,
+    "fields": {
+      "product": 8,
+      "unit": 4,
+      "factor": 100,
+      "is_default_sale": false,
+      "is_default_purchase": true,
+      "can_sell": false,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.barcode",
+    "pk": 15,
+    "fields": {
+      "product": 8,
+      "packaging": 21,
+      "code": "8960000000085",
+      "is_primary": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.barcode",
+    "pk": 16,
+    "fields": {
+      "product": 8,
+      "packaging": 23,
+      "code": "8960000005080",
+      "is_primary": false,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 9,
+    "fields": {
+      "name": "Velosef",
+      "generic_name": "Cephradine",
+      "brand": "Velosef",
+      "manufacturer": 9,
+      "category": 2,
+      "strength": "500mg",
+      "dosage_form": "Capsule",
+      "sku": "MED-0009",
+      "description": "Cephradine 500mg · capsule · The Searle Company",
+      "image": "products/med-0009.png",
+      "requires_prescription": true,
+      "is_active": true,
+      "base_unit": 2,
+      "purchase_price": "22.00",
+      "retail_price": "28.00",
+      "wholesale_price": "25.7600",
+      "tax_rate": "0",
+      "max_discount_percent": "20.00",
+      "min_stock": 40,
+      "reorder_level": 80,
+      "max_stock": 320,
+      "preferred_supplier": 10,
+      "duplicate_key": "velosef|500mg|capsule|9",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.productpackaging",
+    "pk": 24,
+    "fields": {
+      "product": 9,
+      "unit": 2,
+      "factor": 1,
+      "is_default_sale": true,
+      "is_default_purchase": false,
+      "can_sell": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.productpackaging",
+    "pk": 25,
+    "fields": {
+      "product": 9,
+      "unit": 3,
+      "factor": 8,
+      "is_default_sale": false,
+      "is_default_purchase": false,
+      "can_sell": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.productpackaging",
+    "pk": 26,
+    "fields": {
+      "product": 9,
+      "unit": 4,
+      "factor": 80,
+      "is_default_sale": false,
+      "is_default_purchase": true,
+      "can_sell": false,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.barcode",
+    "pk": 17,
+    "fields": {
+      "product": 9,
+      "packaging": 24,
+      "code": "8960000000092",
+      "is_primary": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.barcode",
+    "pk": 18,
+    "fields": {
+      "product": 9,
+      "packaging": 26,
+      "code": "8960000005097",
+      "is_primary": false,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 10,
+    "fields": {
+      "name": "Risek",
+      "generic_name": "Omeprazole",
+      "brand": "Risek",
+      "manufacturer": 3,
+      "category": 3,
+      "strength": "20mg",
+      "dosage_form": "Capsule",
+      "sku": "MED-0010",
+      "description": "Omeprazole 20mg · capsule · Getz Pharma",
+      "image": "products/med-0010.png",
+      "requires_prescription": false,
+      "is_active": true,
+      "base_unit": 2,
+      "purchase_price": "14.00",
+      "retail_price": "18.50",
+      "wholesale_price": "17.0200",
+      "tax_rate": "0",
+      "max_discount_percent": "20.00",
+      "min_stock": 70,
+      "reorder_level": 140,
+      "max_stock": 560,
+      "preferred_supplier": 1,
+      "duplicate_key": "risek|20mg|capsule|3",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.productpackaging",
+    "pk": 27,
+    "fields": {
+      "product": 10,
+      "unit": 2,
+      "factor": 1,
+      "is_default_sale": true,
+      "is_default_purchase": false,
+      "can_sell": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.productpackaging",
+    "pk": 28,
+    "fields": {
+      "product": 10,
+      "unit": 3,
+      "factor": 7,
+      "is_default_sale": false,
+      "is_default_purchase": false,
+      "can_sell": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.productpackaging",
+    "pk": 29,
+    "fields": {
+      "product": 10,
+      "unit": 4,
+      "factor": 70,
+      "is_default_sale": false,
+      "is_default_purchase": true,
+      "can_sell": false,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.barcode",
+    "pk": 19,
+    "fields": {
+      "product": 10,
+      "packaging": 27,
+      "code": "8960000000108",
+      "is_primary": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.barcode",
+    "pk": 20,
+    "fields": {
+      "product": 10,
+      "packaging": 29,
+      "code": "8960000005103",
+      "is_primary": false,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 11,
+    "fields": {
+      "name": "Nexum",
+      "generic_name": "Esomeprazole",
+      "brand": "Nexum",
+      "manufacturer": 3,
+      "category": 3,
+      "strength": "40mg",
+      "dosage_form": "Capsule",
+      "sku": "MED-0011",
+      "description": "Esomeprazole 40mg · capsule · Getz Pharma",
+      "image": "products/med-0011.png",
+      "requires_prescription": false,
+      "is_active": true,
+      "base_unit": 2,
+      "purchase_price": "26.00",
+      "retail_price": "33.00",
+      "wholesale_price": "30.3600",
+      "tax_rate": "0",
+      "max_discount_percent": "20.00",
+      "min_stock": 45,
+      "reorder_level": 90,
+      "max_stock": 360,
+      "preferred_supplier": 2,
+      "duplicate_key": "nexum|40mg|capsule|3",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.productpackaging",
+    "pk": 30,
+    "fields": {
+      "product": 11,
+      "unit": 2,
+      "factor": 1,
+      "is_default_sale": true,
+      "is_default_purchase": false,
+      "can_sell": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.productpackaging",
+    "pk": 31,
+    "fields": {
+      "product": 11,
+      "unit": 3,
+      "factor": 7,
+      "is_default_sale": false,
+      "is_default_purchase": false,
+      "can_sell": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.productpackaging",
+    "pk": 32,
+    "fields": {
+      "product": 11,
+      "unit": 4,
+      "factor": 70,
+      "is_default_sale": false,
+      "is_default_purchase": true,
+      "can_sell": false,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.barcode",
+    "pk": 21,
+    "fields": {
+      "product": 11,
+      "packaging": 30,
+      "code": "8960000000115",
+      "is_primary": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.barcode",
+    "pk": 22,
+    "fields": {
+      "product": 11,
+      "packaging": 32,
+      "code": "8960000005110",
+      "is_primary": false,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 12,
+    "fields": {
+      "name": "Motilium",
+      "generic_name": "Domperidone",
+      "brand": "Motilium",
+      "manufacturer": 8,
+      "category": 3,
+      "strength": "10mg",
+      "dosage_form": "Tablet",
+      "sku": "MED-0012",
+      "description": "Domperidone 10mg · tablet · Highnoon Laboratories",
+      "image": "products/med-0012.png",
+      "requires_prescription": false,
+      "is_active": true,
+      "base_unit": 1,
+      "purchase_price": "4.80",
+      "retail_price": "6.20",
+      "wholesale_price": "5.7040",
+      "tax_rate": "0",
+      "max_discount_percent": "20.00",
+      "min_stock": 60,
+      "reorder_level": 120,
+      "max_stock": 480,
+      "preferred_supplier": 3,
+      "duplicate_key": "motilium|10mg|tablet|8",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.productpackaging",
+    "pk": 33,
+    "fields": {
+      "product": 12,
+      "unit": 1,
+      "factor": 1,
+      "is_default_sale": true,
+      "is_default_purchase": false,
+      "can_sell": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.productpackaging",
+    "pk": 34,
+    "fields": {
+      "product": 12,
+      "unit": 3,
+      "factor": 10,
+      "is_default_sale": false,
+      "is_default_purchase": false,
+      "can_sell": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.productpackaging",
+    "pk": 35,
+    "fields": {
+      "product": 12,
+      "unit": 4,
+      "factor": 100,
+      "is_default_sale": false,
+      "is_default_purchase": true,
+      "can_sell": false,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.barcode",
+    "pk": 23,
+    "fields": {
+      "product": 12,
+      "packaging": 33,
+      "code": "8960000000122",
+      "is_primary": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.barcode",
+    "pk": 24,
+    "fields": {
+      "product": 12,
+      "packaging": 35,
+      "code": "8960000005127",
+      "is_primary": false,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 13,
+    "fields": {
+      "name": "ENO Fruit Salt",
+      "generic_name": "Sodium bicarbonate",
+      "brand": "ENO",
+      "manufacturer": 1,
+      "category": 3,
+      "strength": "5g",
+      "dosage_form": "Sachet",
+      "sku": "MED-0013",
+      "description": "Sodium bicarbonate 5g · sachet · GlaxoSmithKline",
+      "image": "products/med-0013.png",
+      "requires_prescription": false,
+      "is_active": true,
+      "base_unit": 8,
+      "purchase_price": "11.00",
+      "retail_price": "15.00",
+      "wholesale_price": "13.8000",
+      "tax_rate": "0",
+      "max_discount_percent": "20.00",
+      "min_stock": 50,
+      "reorder_level": 100,
+      "max_stock": 400,
+      "preferred_supplier": 4,
+      "duplicate_key": "eno fruit salt|5g|sachet|1",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.productpackaging",
+    "pk": 36,
+    "fields": {
+      "product": 13,
+      "unit": 8,
+      "factor": 1,
+      "is_default_sale": true,
+      "is_default_purchase": false,
+      "can_sell": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.productpackaging",
+    "pk": 37,
+    "fields": {
+      "product": 13,
+      "unit": 4,
+      "factor": 24,
+      "is_default_sale": false,
+      "is_default_purchase": true,
+      "can_sell": false,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.barcode",
+    "pk": 25,
+    "fields": {
+      "product": 13,
+      "packaging": 36,
+      "code": "8960000000139",
+      "is_primary": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.barcode",
+    "pk": 26,
+    "fields": {
+      "product": 13,
+      "packaging": 37,
+      "code": "8960000005134",
+      "is_primary": false,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 14,
+    "fields": {
+      "name": "Glucophage",
+      "generic_name": "Metformin",
+      "brand": "Glucophage",
+      "manufacturer": 5,
+      "category": 4,
+      "strength": "500mg",
+      "dosage_form": "Tablet",
+      "sku": "MED-0014",
+      "description": "Metformin 500mg · tablet · Merck Pakistan",
+      "image": "products/med-0014.png",
+      "requires_prescription": true,
+      "is_active": true,
+      "base_unit": 1,
+      "purchase_price": "2.10",
+      "retail_price": "2.90",
+      "wholesale_price": "2.6680",
+      "tax_rate": "0",
+      "max_discount_percent": "20.00",
+      "min_stock": 130,
+      "reorder_level": 260,
+      "max_stock": 1040,
+      "preferred_supplier": 5,
+      "duplicate_key": "glucophage|500mg|tablet|5",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.productpackaging",
+    "pk": 38,
+    "fields": {
+      "product": 14,
+      "unit": 1,
+      "factor": 1,
+      "is_default_sale": true,
+      "is_default_purchase": false,
+      "can_sell": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.productpackaging",
+    "pk": 39,
+    "fields": {
+      "product": 14,
+      "unit": 3,
+      "factor": 10,
+      "is_default_sale": false,
+      "is_default_purchase": false,
+      "can_sell": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.productpackaging",
+    "pk": 40,
+    "fields": {
+      "product": 14,
+      "unit": 4,
+      "factor": 50,
+      "is_default_sale": false,
+      "is_default_purchase": true,
+      "can_sell": false,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.barcode",
+    "pk": 27,
+    "fields": {
+      "product": 14,
+      "packaging": 38,
+      "code": "8960000000146",
+      "is_primary": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.barcode",
+    "pk": 28,
+    "fields": {
+      "product": 14,
+      "packaging": 40,
+      "code": "8960000005141",
+      "is_primary": false,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 15,
+    "fields": {
+      "name": "Diamicron MR",
+      "generic_name": "Gliclazide",
+      "brand": "Diamicron",
+      "manufacturer": 7,
+      "category": 4,
+      "strength": "60mg",
+      "dosage_form": "Tablet",
+      "sku": "MED-0015",
+      "description": "Gliclazide 60mg · tablet · Servier Research",
+      "image": "products/med-0015.png",
+      "requires_prescription": true,
+      "is_active": true,
+      "base_unit": 1,
+      "purchase_price": "15.50",
+      "retail_price": "19.80",
+      "wholesale_price": "18.2160",
+      "tax_rate": "0",
+      "max_discount_percent": "20.00",
+      "min_stock": 50,
+      "reorder_level": 100,
+      "max_stock": 400,
+      "preferred_supplier": 6,
+      "duplicate_key": "diamicron mr|60mg|tablet|7",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.productpackaging",
+    "pk": 41,
+    "fields": {
+      "product": 15,
+      "unit": 1,
+      "factor": 1,
+      "is_default_sale": true,
+      "is_default_purchase": false,
+      "can_sell": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.productpackaging",
+    "pk": 42,
+    "fields": {
+      "product": 15,
+      "unit": 3,
+      "factor": 15,
+      "is_default_sale": false,
+      "is_default_purchase": false,
+      "can_sell": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.productpackaging",
+    "pk": 43,
+    "fields": {
+      "product": 15,
+      "unit": 4,
+      "factor": 60,
+      "is_default_sale": false,
+      "is_default_purchase": true,
+      "can_sell": false,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.barcode",
+    "pk": 29,
+    "fields": {
+      "product": 15,
+      "packaging": 41,
+      "code": "8960000000153",
+      "is_primary": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.barcode",
+    "pk": 30,
+    "fields": {
+      "product": 15,
+      "packaging": 43,
+      "code": "8960000005158",
+      "is_primary": false,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 16,
+    "fields": {
+      "name": "Mixtard 30/70",
+      "generic_name": "Insulin human",
+      "brand": "Mixtard",
+      "manufacturer": 12,
+      "category": 4,
+      "strength": "100IU/ml",
+      "dosage_form": "Vial",
+      "sku": "MED-0016",
+      "description": "Insulin human 100IU/ml · vial · Novo Nordisk",
+      "image": "products/med-0016.png",
+      "requires_prescription": true,
+      "is_active": true,
+      "base_unit": 7,
+      "purchase_price": "48.00",
+      "retail_price": "59.00",
+      "wholesale_price": "54.2800",
+      "tax_rate": "0",
+      "max_discount_percent": "20.00",
+      "min_stock": 75,
+      "reorder_level": 150,
+      "max_stock": 600,
+      "preferred_supplier": 7,
+      "duplicate_key": "mixtard 30/70|100iu/ml|vial|12",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.productpackaging",
+    "pk": 44,
+    "fields": {
+      "product": 16,
+      "unit": 7,
+      "factor": 1,
+      "is_default_sale": true,
+      "is_default_purchase": false,
+      "can_sell": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.productpackaging",
+    "pk": 45,
+    "fields": {
+      "product": 16,
+      "unit": 9,
+      "factor": 10,
+      "is_default_sale": false,
+      "is_default_purchase": true,
+      "can_sell": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.barcode",
+    "pk": 31,
+    "fields": {
+      "product": 16,
+      "packaging": 44,
+      "code": "8960000000160",
+      "is_primary": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.barcode",
+    "pk": 32,
+    "fields": {
+      "product": 16,
+      "packaging": 45,
+      "code": "8960000005165",
+      "is_primary": false,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 17,
+    "fields": {
+      "name": "Loprin",
+      "generic_name": "Aspirin",
+      "brand": "Loprin",
+      "manufacturer": 8,
+      "category": 5,
+      "strength": "75mg",
+      "dosage_form": "Tablet",
+      "sku": "MED-0017",
+      "description": "Aspirin 75mg · tablet · Highnoon Laboratories",
+      "image": "products/med-0017.png",
+      "requires_prescription": false,
+      "is_active": true,
+      "base_unit": 1,
+      "purchase_price": "0.90",
+      "retail_price": "1.30",
+      "wholesale_price": "1.1960",
+      "tax_rate": "0",
+      "max_discount_percent": "20.00",
+      "min_stock": 150,
+      "reorder_level": 300,
+      "max_stock": 1200,
+      "preferred_supplier": 8,
+      "duplicate_key": "loprin|75mg|tablet|8",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.productpackaging",
+    "pk": 46,
+    "fields": {
+      "product": 17,
+      "unit": 1,
+      "factor": 1,
+      "is_default_sale": true,
+      "is_default_purchase": false,
+      "can_sell": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.productpackaging",
+    "pk": 47,
+    "fields": {
+      "product": 17,
+      "unit": 3,
+      "factor": 10,
+      "is_default_sale": false,
+      "is_default_purchase": false,
+      "can_sell": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.productpackaging",
+    "pk": 48,
+    "fields": {
+      "product": 17,
+      "unit": 4,
+      "factor": 100,
+      "is_default_sale": false,
+      "is_default_purchase": true,
+      "can_sell": false,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.barcode",
+    "pk": 33,
+    "fields": {
+      "product": 17,
+      "packaging": 46,
+      "code": "8960000000177",
+      "is_primary": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.barcode",
+    "pk": 34,
+    "fields": {
+      "product": 17,
+      "packaging": 48,
+      "code": "8960000005172",
+      "is_primary": false,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 18,
+    "fields": {
+      "name": "Concor",
+      "generic_name": "Bisoprolol",
+      "brand": "Concor",
+      "manufacturer": 5,
+      "category": 5,
+      "strength": "5mg",
+      "dosage_form": "Tablet",
+      "sku": "MED-0018",
+      "description": "Bisoprolol 5mg · tablet · Merck Pakistan",
+      "image": "products/med-0018.png",
+      "requires_prescription": true,
+      "is_active": true,
+      "base_unit": 1,
+      "purchase_price": "12.00",
+      "retail_price": "15.40",
+      "wholesale_price": "14.1680",
+      "tax_rate": "0",
+      "max_discount_percent": "20.00",
+      "min_stock": 55,
+      "reorder_level": 110,
+      "max_stock": 440,
+      "preferred_supplier": 9,
+      "duplicate_key": "concor|5mg|tablet|5",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.productpackaging",
+    "pk": 49,
+    "fields": {
+      "product": 18,
+      "unit": 1,
+      "factor": 1,
+      "is_default_sale": true,
+      "is_default_purchase": false,
+      "can_sell": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.productpackaging",
+    "pk": 50,
+    "fields": {
+      "product": 18,
+      "unit": 3,
+      "factor": 10,
+      "is_default_sale": false,
+      "is_default_purchase": false,
+      "can_sell": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.productpackaging",
+    "pk": 51,
+    "fields": {
+      "product": 18,
+      "unit": 4,
+      "factor": 50,
+      "is_default_sale": false,
+      "is_default_purchase": true,
+      "can_sell": false,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.barcode",
+    "pk": 35,
+    "fields": {
+      "product": 18,
+      "packaging": 49,
+      "code": "8960000000184",
+      "is_primary": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.barcode",
+    "pk": 36,
+    "fields": {
+      "product": 18,
+      "packaging": 51,
+      "code": "8960000005189",
+      "is_primary": false,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 19,
+    "fields": {
+      "name": "Lipiget",
+      "generic_name": "Atorvastatin",
+      "brand": "Lipiget",
+      "manufacturer": 3,
+      "category": 5,
+      "strength": "20mg",
+      "dosage_form": "Tablet",
+      "sku": "MED-0019",
+      "description": "Atorvastatin 20mg · tablet · Getz Pharma",
+      "image": "products/med-0019.png",
+      "requires_prescription": true,
+      "is_active": true,
+      "base_unit": 1,
+      "purchase_price": "9.60",
+      "retail_price": "12.50",
+      "wholesale_price": "11.5000",
+      "tax_rate": "0",
+      "max_discount_percent": "20.00",
+      "min_stock": 60,
+      "reorder_level": 120,
+      "max_stock": 480,
+      "preferred_supplier": 10,
+      "duplicate_key": "lipiget|20mg|tablet|3",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.productpackaging",
+    "pk": 52,
+    "fields": {
+      "product": 19,
+      "unit": 1,
+      "factor": 1,
+      "is_default_sale": true,
+      "is_default_purchase": false,
+      "can_sell": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.productpackaging",
+    "pk": 53,
+    "fields": {
+      "product": 19,
+      "unit": 3,
+      "factor": 10,
+      "is_default_sale": false,
+      "is_default_purchase": false,
+      "can_sell": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.productpackaging",
+    "pk": 54,
+    "fields": {
+      "product": 19,
+      "unit": 4,
+      "factor": 100,
+      "is_default_sale": false,
+      "is_default_purchase": true,
+      "can_sell": false,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.barcode",
+    "pk": 37,
+    "fields": {
+      "product": 19,
+      "packaging": 52,
+      "code": "8960000000191",
+      "is_primary": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.barcode",
+    "pk": 38,
+    "fields": {
+      "product": 19,
+      "packaging": 54,
+      "code": "8960000005196",
+      "is_primary": false,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 20,
+    "fields": {
+      "name": "Ventolin Inhaler",
+      "generic_name": "Salbutamol",
+      "brand": "Ventolin",
+      "manufacturer": 1,
+      "category": 6,
+      "strength": "100mcg",
+      "dosage_form": "Inhaler",
+      "sku": "MED-0020",
+      "description": "Salbutamol 100mcg · inhaler · GlaxoSmithKline",
+      "image": "products/med-0020.png",
+      "requires_prescription": true,
+      "is_active": true,
+      "base_unit": 11,
+      "purchase_price": "310.00",
+      "retail_price": "395.00",
+      "wholesale_price": "363.4000",
+      "tax_rate": "0",
+      "max_discount_percent": "20.00",
+      "min_stock": 7,
+      "reorder_level": 14,
+      "max_stock": 56,
+      "preferred_supplier": 1,
+      "duplicate_key": "ventolin inhaler|100mcg|inhaler|1",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.productpackaging",
+    "pk": 55,
+    "fields": {
+      "product": 20,
+      "unit": 11,
+      "factor": 1,
+      "is_default_sale": true,
+      "is_default_purchase": false,
+      "can_sell": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.productpackaging",
+    "pk": 56,
+    "fields": {
+      "product": 20,
+      "unit": 4,
+      "factor": 6,
+      "is_default_sale": false,
+      "is_default_purchase": true,
+      "can_sell": false,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.barcode",
+    "pk": 39,
+    "fields": {
+      "product": 20,
+      "packaging": 55,
+      "code": "8960000000207",
+      "is_primary": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.barcode",
+    "pk": 40,
+    "fields": {
+      "product": 20,
+      "packaging": 56,
+      "code": "8960000005202",
+      "is_primary": false,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 21,
+    "fields": {
+      "name": "Zyrtec",
+      "generic_name": "Cetirizine",
+      "brand": "Zyrtec",
+      "manufacturer": 6,
+      "category": 7,
+      "strength": "10mg",
+      "dosage_form": "Tablet",
+      "sku": "MED-0021",
+      "description": "Cetirizine 10mg · tablet · Novartis Pharma",
+      "image": "products/med-0021.png",
+      "requires_prescription": false,
+      "is_active": true,
+      "base_unit": 1,
+      "purchase_price": "7.20",
+      "retail_price": "9.40",
+      "wholesale_price": "8.6480",
+      "tax_rate": "0",
+      "max_discount_percent": "20.00",
+      "min_stock": 70,
+      "reorder_level": 140,
+      "max_stock": 560,
+      "preferred_supplier": 2,
+      "duplicate_key": "zyrtec|10mg|tablet|6",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.productpackaging",
+    "pk": 57,
+    "fields": {
+      "product": 21,
+      "unit": 1,
+      "factor": 1,
+      "is_default_sale": true,
+      "is_default_purchase": false,
+      "can_sell": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.productpackaging",
+    "pk": 58,
+    "fields": {
+      "product": 21,
+      "unit": 3,
+      "factor": 10,
+      "is_default_sale": false,
+      "is_default_purchase": false,
+      "can_sell": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.productpackaging",
+    "pk": 59,
+    "fields": {
+      "product": 21,
+      "unit": 4,
+      "factor": 100,
+      "is_default_sale": false,
+      "is_default_purchase": true,
+      "can_sell": false,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.barcode",
+    "pk": 41,
+    "fields": {
+      "product": 21,
+      "packaging": 57,
+      "code": "8960000000214",
+      "is_primary": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.barcode",
+    "pk": 42,
+    "fields": {
+      "product": 21,
+      "packaging": 59,
+      "code": "8960000005219",
+      "is_primary": false,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 22,
+    "fields": {
+      "name": "Avil",
+      "generic_name": "Pheniramine",
+      "brand": "Avil",
+      "manufacturer": 4,
+      "category": 7,
+      "strength": "25mg",
+      "dosage_form": "Tablet",
+      "sku": "MED-0022",
+      "description": "Pheniramine 25mg · tablet · Sanofi Aventis",
+      "image": "products/med-0022.png",
+      "requires_prescription": false,
+      "is_active": true,
+      "base_unit": 1,
+      "purchase_price": "1.60",
+      "retail_price": "2.30",
+      "wholesale_price": "2.1160",
+      "tax_rate": "0",
+      "max_discount_percent": "20.00",
+      "min_stock": 100,
+      "reorder_level": 200,
+      "max_stock": 800,
+      "preferred_supplier": 3,
+      "duplicate_key": "avil|25mg|tablet|4",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.productpackaging",
+    "pk": 60,
+    "fields": {
+      "product": 22,
+      "unit": 1,
+      "factor": 1,
+      "is_default_sale": true,
+      "is_default_purchase": false,
+      "can_sell": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.productpackaging",
+    "pk": 61,
+    "fields": {
+      "product": 22,
+      "unit": 3,
+      "factor": 10,
+      "is_default_sale": false,
+      "is_default_purchase": false,
+      "can_sell": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.productpackaging",
+    "pk": 62,
+    "fields": {
+      "product": 22,
+      "unit": 4,
+      "factor": 200,
+      "is_default_sale": false,
+      "is_default_purchase": true,
+      "can_sell": false,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.barcode",
+    "pk": 43,
+    "fields": {
+      "product": 22,
+      "packaging": 60,
+      "code": "8960000000221",
+      "is_primary": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.barcode",
+    "pk": 44,
+    "fields": {
+      "product": 22,
+      "packaging": 62,
+      "code": "8960000005226",
+      "is_primary": false,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 23,
+    "fields": {
+      "name": "Betnovate-N",
+      "generic_name": "Betamethasone + Neomycin",
+      "brand": "Betnovate-N",
+      "manufacturer": 1,
+      "category": 8,
+      "strength": "20g",
+      "dosage_form": "Cream",
+      "sku": "MED-0023",
+      "description": "Betamethasone + Neomycin 20g · cream · GlaxoSmithKline",
+      "image": "products/med-0023.png",
+      "requires_prescription": true,
+      "is_active": true,
+      "base_unit": 10,
+      "purchase_price": "68.00",
+      "retail_price": "86.00",
+      "wholesale_price": "79.1200",
+      "tax_rate": "0",
+      "max_discount_percent": "20.00",
+      "min_stock": 12,
+      "reorder_level": 24,
+      "max_stock": 96,
+      "preferred_supplier": 4,
+      "duplicate_key": "betnovate-n|20g|cream|1",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.productpackaging",
+    "pk": 63,
+    "fields": {
+      "product": 23,
+      "unit": 10,
+      "factor": 1,
+      "is_default_sale": true,
+      "is_default_purchase": false,
+      "can_sell": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.productpackaging",
+    "pk": 64,
+    "fields": {
+      "product": 23,
+      "unit": 4,
+      "factor": 12,
+      "is_default_sale": false,
+      "is_default_purchase": true,
+      "can_sell": false,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.barcode",
+    "pk": 45,
+    "fields": {
+      "product": 23,
+      "packaging": 63,
+      "code": "8960000000238",
+      "is_primary": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.barcode",
+    "pk": 46,
+    "fields": {
+      "product": 23,
+      "packaging": 64,
+      "code": "8960000005233",
+      "is_primary": false,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 24,
+    "fields": {
+      "name": "Polyfax",
+      "generic_name": "Polymyxin B + Bacitracin",
+      "brand": "Polyfax",
+      "manufacturer": 1,
+      "category": 8,
+      "strength": "20g",
+      "dosage_form": "Ointment",
+      "sku": "MED-0024",
+      "description": "Polymyxin B + Bacitracin 20g · ointment · GlaxoSmithKline",
+      "image": "products/med-0024.png",
+      "requires_prescription": false,
+      "is_active": true,
+      "base_unit": 10,
+      "purchase_price": "92.00",
+      "retail_price": "118.00",
+      "wholesale_price": "108.5600",
+      "tax_rate": "0",
+      "max_discount_percent": "20.00",
+      "min_stock": 10,
+      "reorder_level": 20,
+      "max_stock": 80,
+      "preferred_supplier": 5,
+      "duplicate_key": "polyfax|20g|ointment|1",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.productpackaging",
+    "pk": 65,
+    "fields": {
+      "product": 24,
+      "unit": 10,
+      "factor": 1,
+      "is_default_sale": true,
+      "is_default_purchase": false,
+      "can_sell": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.productpackaging",
+    "pk": 66,
+    "fields": {
+      "product": 24,
+      "unit": 4,
+      "factor": 12,
+      "is_default_sale": false,
+      "is_default_purchase": true,
+      "can_sell": false,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.barcode",
+    "pk": 47,
+    "fields": {
+      "product": 24,
+      "packaging": 65,
+      "code": "8960000000245",
+      "is_primary": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.barcode",
+    "pk": 48,
+    "fields": {
+      "product": 24,
+      "packaging": 66,
+      "code": "8960000005240",
+      "is_primary": false,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 25,
+    "fields": {
+      "name": "Surbex-Z",
+      "generic_name": "Multivitamin + Zinc",
+      "brand": "Surbex-Z",
+      "manufacturer": 2,
+      "category": 9,
+      "strength": "",
+      "dosage_form": "Tablet",
+      "sku": "MED-0025",
+      "description": "Multivitamin + Zinc · tablet · Abbott Laboratories",
+      "image": "products/med-0025.png",
+      "requires_prescription": false,
+      "is_active": true,
+      "base_unit": 1,
+      "purchase_price": "5.40",
+      "retail_price": "7.20",
+      "wholesale_price": "6.6240",
+      "tax_rate": "0",
+      "max_discount_percent": "20.00",
+      "min_stock": 130,
+      "reorder_level": 260,
+      "max_stock": 1040,
+      "preferred_supplier": 6,
+      "duplicate_key": "surbex-z||tablet|2",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.productpackaging",
+    "pk": 67,
+    "fields": {
+      "product": 25,
+      "unit": 1,
+      "factor": 1,
+      "is_default_sale": true,
+      "is_default_purchase": false,
+      "can_sell": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.productpackaging",
+    "pk": 68,
+    "fields": {
+      "product": 25,
+      "unit": 3,
+      "factor": 10,
+      "is_default_sale": false,
+      "is_default_purchase": false,
+      "can_sell": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.productpackaging",
+    "pk": 69,
+    "fields": {
+      "product": 25,
+      "unit": 4,
+      "factor": 300,
+      "is_default_sale": false,
+      "is_default_purchase": true,
+      "can_sell": false,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.barcode",
+    "pk": 49,
+    "fields": {
+      "product": 25,
+      "packaging": 67,
+      "code": "8960000000252",
+      "is_primary": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.barcode",
+    "pk": 50,
+    "fields": {
+      "product": 25,
+      "packaging": 69,
+      "code": "8960000005257",
+      "is_primary": false,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 26,
+    "fields": {
+      "name": "Calcium Sandoz",
+      "generic_name": "Calcium carbonate",
+      "brand": "Calcium",
+      "manufacturer": 6,
+      "category": 9,
+      "strength": "500mg",
+      "dosage_form": "Tablet",
+      "sku": "MED-0026",
+      "description": "Calcium carbonate 500mg · tablet · Novartis Pharma",
+      "image": "products/med-0026.png",
+      "requires_prescription": false,
+      "is_active": true,
+      "base_unit": 1,
+      "purchase_price": "6.80",
+      "retail_price": "8.90",
+      "wholesale_price": "8.1880",
+      "tax_rate": "0",
+      "max_discount_percent": "20.00",
+      "min_stock": 75,
+      "reorder_level": 150,
+      "max_stock": 600,
+      "preferred_supplier": 7,
+      "duplicate_key": "calcium sandoz|500mg|tablet|6",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.productpackaging",
+    "pk": 70,
+    "fields": {
+      "product": 26,
+      "unit": 1,
+      "factor": 1,
+      "is_default_sale": true,
+      "is_default_purchase": false,
+      "can_sell": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.productpackaging",
+    "pk": 71,
+    "fields": {
+      "product": 26,
+      "unit": 3,
+      "factor": 10,
+      "is_default_sale": false,
+      "is_default_purchase": false,
+      "can_sell": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.productpackaging",
+    "pk": 72,
+    "fields": {
+      "product": 26,
+      "unit": 4,
+      "factor": 100,
+      "is_default_sale": false,
+      "is_default_purchase": true,
+      "can_sell": false,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.barcode",
+    "pk": 51,
+    "fields": {
+      "product": 26,
+      "packaging": 70,
+      "code": "8960000000269",
+      "is_primary": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.barcode",
+    "pk": 52,
+    "fields": {
+      "product": 26,
+      "packaging": 72,
+      "code": "8960000005264",
+      "is_primary": false,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 27,
+    "fields": {
+      "name": "Dettol Antiseptic",
+      "generic_name": "Chloroxylenol",
+      "brand": "Dettol",
+      "manufacturer": 11,
+      "category": 10,
+      "strength": "250ml",
+      "dosage_form": "Liquid",
+      "sku": "MED-0027",
+      "description": "Chloroxylenol 250ml · liquid · Reckitt Benckiser",
+      "image": "products/med-0027.png",
+      "requires_prescription": false,
+      "is_active": true,
+      "base_unit": 7,
+      "purchase_price": "1.05",
+      "retail_price": "1.60",
+      "wholesale_price": "1.4720",
+      "tax_rate": "17",
+      "max_discount_percent": "20.00",
+      "min_stock": 500,
+      "reorder_level": 1000,
+      "max_stock": 4000,
+      "preferred_supplier": 8,
+      "duplicate_key": "dettol antiseptic|250ml|liquid|11",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.productpackaging",
+    "pk": 73,
+    "fields": {
+      "product": 27,
+      "unit": 7,
+      "factor": 1,
+      "is_default_sale": true,
+      "is_default_purchase": false,
+      "can_sell": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.productpackaging",
+    "pk": 74,
+    "fields": {
+      "product": 27,
+      "unit": 6,
+      "factor": 250,
+      "is_default_sale": false,
+      "is_default_purchase": true,
+      "can_sell": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.barcode",
+    "pk": 53,
+    "fields": {
+      "product": 27,
+      "packaging": 73,
+      "code": "8960000000276",
+      "is_primary": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.barcode",
+    "pk": 54,
+    "fields": {
+      "product": 27,
+      "packaging": 74,
+      "code": "8960000005271",
+      "is_primary": false,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 28,
+    "fields": {
+      "name": "Refresh Tears",
+      "generic_name": "Carboxymethylcellulose",
+      "brand": "Refresh",
+      "manufacturer": 2,
+      "category": 11,
+      "strength": "10ml",
+      "dosage_form": "Eye drops",
+      "sku": "MED-0028",
+      "description": "Carboxymethylcellulose 10ml · eye drops · Abbott Laboratories",
+      "image": "products/med-0028.png",
+      "requires_prescription": false,
+      "is_active": true,
+      "base_unit": 7,
+      "purchase_price": "24.00",
+      "retail_price": "31.00",
+      "wholesale_price": "28.5200",
+      "tax_rate": "0",
+      "max_discount_percent": "20.00",
+      "min_stock": 60,
+      "reorder_level": 120,
+      "max_stock": 480,
+      "preferred_supplier": 9,
+      "duplicate_key": "refresh tears|10ml|eye drops|2",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.productpackaging",
+    "pk": 75,
+    "fields": {
+      "product": 28,
+      "unit": 7,
+      "factor": 1,
+      "is_default_sale": true,
+      "is_default_purchase": false,
+      "can_sell": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.productpackaging",
+    "pk": 76,
+    "fields": {
+      "product": 28,
+      "unit": 6,
+      "factor": 10,
+      "is_default_sale": false,
+      "is_default_purchase": true,
+      "can_sell": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.barcode",
+    "pk": 55,
+    "fields": {
+      "product": 28,
+      "packaging": 75,
+      "code": "8960000000283",
+      "is_primary": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.barcode",
+    "pk": 56,
+    "fields": {
+      "product": 28,
+      "packaging": 76,
+      "code": "8960000005288",
+      "is_primary": false,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 29,
+    "fields": {
+      "name": "Leukoplast Tape",
+      "generic_name": "Adhesive tape",
+      "brand": "Leukoplast",
+      "manufacturer": 10,
+      "category": 12,
+      "strength": "2.5cm",
+      "dosage_form": "Roll",
+      "sku": "MED-0029",
+      "description": "Adhesive tape 2.5cm · roll · Hilton Pharma",
+      "image": "products/med-0029.png",
+      "requires_prescription": false,
+      "is_active": true,
+      "base_unit": 4,
+      "purchase_price": "55.00",
+      "retail_price": "72.00",
+      "wholesale_price": "66.2400",
+      "tax_rate": "17",
+      "max_discount_percent": "20.00",
+      "min_stock": 9,
+      "reorder_level": 18,
+      "max_stock": 72,
+      "preferred_supplier": 10,
+      "duplicate_key": "leukoplast tape|2.5cm|roll|10",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.productpackaging",
+    "pk": 77,
+    "fields": {
+      "product": 29,
+      "unit": 4,
+      "factor": 1,
+      "is_default_sale": true,
+      "is_default_purchase": false,
+      "can_sell": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.productpackaging",
+    "pk": 78,
+    "fields": {
+      "product": 29,
+      "unit": 5,
+      "factor": 12,
+      "is_default_sale": false,
+      "is_default_purchase": true,
+      "can_sell": false,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.barcode",
+    "pk": 57,
+    "fields": {
+      "product": 29,
+      "packaging": 77,
+      "code": "8960000000290",
+      "is_primary": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.barcode",
+    "pk": 58,
+    "fields": {
+      "product": 29,
+      "packaging": 78,
+      "code": "8960000005295",
+      "is_primary": false,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 30,
+    "fields": {
+      "name": "Pyodine Solution",
+      "generic_name": "Povidone iodine",
+      "brand": "Pyodine",
+      "manufacturer": 9,
+      "category": 10,
+      "strength": "60ml",
+      "dosage_form": "Liquid",
+      "sku": "MED-0030",
+      "description": "Povidone iodine 60ml · liquid · The Searle Company",
+      "image": "products/med-0030.png",
+      "requires_prescription": false,
+      "is_active": true,
+      "base_unit": 7,
+      "purchase_price": "1.40",
+      "retail_price": "2.00",
+      "wholesale_price": "1.8400",
+      "tax_rate": "0",
+      "max_discount_percent": "20.00",
+      "min_stock": 250,
+      "reorder_level": 500,
+      "max_stock": 2000,
+      "preferred_supplier": 1,
+      "duplicate_key": "pyodine solution|60ml|liquid|9",
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.productpackaging",
+    "pk": 79,
+    "fields": {
+      "product": 30,
+      "unit": 7,
+      "factor": 1,
+      "is_default_sale": true,
+      "is_default_purchase": false,
+      "can_sell": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.productpackaging",
+    "pk": 80,
+    "fields": {
+      "product": 30,
+      "unit": 6,
+      "factor": 60,
+      "is_default_sale": false,
+      "is_default_purchase": true,
+      "can_sell": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.barcode",
+    "pk": 59,
+    "fields": {
+      "product": 30,
+      "packaging": 79,
+      "code": "8960000000306",
+      "is_primary": true,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  },
+  {
+    "model": "catalog.barcode",
+    "pk": 60,
+    "fields": {
+      "product": 30,
+      "packaging": 80,
+      "code": "8960000005301",
+      "is_primary": false,
+      "created_at": "2026-01-02T09:00:00+05:00",
+      "updated_at": "2026-01-02T09:00:00+05:00"
+    }
+  }
+]

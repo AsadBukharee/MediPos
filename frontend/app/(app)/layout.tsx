@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect } from "react";
-import { Select } from "@/components/ui";
 import { useAuth } from "@/lib/auth";
 import { title } from "@/lib/format";
 
@@ -66,18 +65,19 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
         </nav>
         <div className="space-y-2 border-t border-white/10 p-3">
           {user.branches.length > 1 ? (
-            <Select
+            // Styled for the dark sidebar, so it does not inherit the light form palette.
+            <select
               aria-label="Branch"
               value={branch?.id ?? ""}
               onChange={(event) => switchBranch(Number(event.target.value))}
-              className="border-white/15 bg-ink-2 text-white"
+              className="h-9 w-full rounded-md border border-white/15 bg-ink-2 px-2.5 pr-7 text-white"
             >
               {user.branches.map((b) => (
-                <option key={b.id} value={b.id}>
+                <option key={b.id} value={b.id} className="text-ink">
                   {b.name}
                 </option>
               ))}
-            </Select>
+            </select>
           ) : (
             <p className="px-1 text-[13px] text-white/70">{branch?.name ?? "No branch assigned"}</p>
           )}

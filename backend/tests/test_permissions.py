@@ -117,3 +117,14 @@ def test_cors_allows_the_configured_origins(client, settings, cashier):
     assert origin_allowed("https://medipos-git-feature-asad.vercel.app")  # preview deployment
     assert not origin_allowed("https://medipos.attacker.example")
     assert not origin_allowed("https://evil.vercel.app")
+
+
+def test_signed_in_user_lands_on_a_shop_not_a_warehouse(api, make_user, branch, other_branch):
+    """The client opens on the first branch it is given, so a warehouse must never lead."""
+    from apps.branches.models import Branch
+
+    warehouse = Branch.objects.create(name="A Central Warehouse", code="whse", kind="warehouse")
+    user = make_user("branch_admin", branches=[warehouse, other_branch, branch])
+    branches = api(user).get("/api/v1/auth/me/").data["branches"]
+    assert [item["kind"] for item in branches] == ["store", "store", "warehouse"]
+    assert branches[0]["name"] == "Main"  # alphabetical within the shops

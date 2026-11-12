@@ -37,12 +37,15 @@ export default function ProductsPage() {
           {
             header: "Medicine",
             cell: (p) => (
-              <>
-                <span className="font-medium">{p.name}</span> <span className="text-muted">{p.strength} {p.dosage_form}</span>
-                {p.requires_prescription && <span className="ml-2"><Badge tone="warn">Rx</Badge></span>}
-                {!p.is_active && <span className="ml-2"><Badge>inactive</Badge></span>}
-                <p className="text-xs text-muted">{p.generic_name}</p>
-              </>
+              <span className="flex items-center gap-3">
+                <Thumbnail src={p.image} name={p.name} />
+                <span>
+                  <span className="font-medium">{p.name}</span> <span className="text-muted">{p.strength} {p.dosage_form}</span>
+                  {p.requires_prescription && <span className="ml-2"><Badge tone="warn">Rx</Badge></span>}
+                  {!p.is_active && <span className="ml-2"><Badge>inactive</Badge></span>}
+                  <span className="block text-xs text-muted">{p.generic_name}</span>
+                </span>
+              </span>
             ),
           },
           { header: "SKU", cell: (p) => <span className="font-mono text-[13px]">{p.sku}</span> },
@@ -56,6 +59,30 @@ export default function ProductsPage() {
       {editing && <ProductForm product={editing === "new" ? null : editing} onClose={() => (setEditing(null), products.reload())} />}
       {importing && <ImportModal onClose={() => (setImporting(false), products.reload())} />}
     </>
+  );
+}
+
+/** The pack photo, or the medicine's initials when it has none. */
+function Thumbnail({ src, name, size = 40 }: { src: string | null; name: string; size?: number }) {
+  const initials = name.slice(0, 2).toUpperCase();
+  return src ? (
+    // eslint-disable-next-line @next/next/no-img-element -- served from the API host, not optimised by Next
+    <img
+      src={src}
+      alt=""
+      width={size}
+      height={size}
+      style={{ width: size, height: size }}
+      className="shrink-0 rounded-md border border-line bg-canvas object-contain"
+    />
+  ) : (
+    <span
+      aria-hidden
+      style={{ width: size, height: size }}
+      className="flex shrink-0 items-center justify-center rounded-md border border-line bg-canvas text-xs font-semibold text-muted"
+    >
+      {initials}
+    </span>
   );
 }
 
@@ -89,6 +116,8 @@ function ProductForm({ product, onClose }: { product: Product | null; onClose: (
   );
   const [barcode, setBarcode] = useState("");
   const [allowDuplicate, setAllowDuplicate] = useState(false);
+  const [picture, setPicture] = useState<File | null>(null);
+  const [preview, setPreview] = useState<string | null>(product?.image ?? null);
   const set = (patch: Partial<typeof form>) => setForm((f) => ({ ...f, ...patch }));
   const text = (name: keyof typeof form) => ({
     value: form[name] as string,
@@ -112,6 +141,12 @@ function ProductForm({ product, onClose }: { product: Product | null; onClose: (
         ? await api<Product>(`/catalog/products/${product.id}/`, { method: "PATCH", body })
         : await api<Product>("/catalog/products/", { body });
       if (barcode.trim()) await api("/catalog/barcodes/", { body: { product: result.id, code: barcode.trim(), is_primary: result.barcodes.length === 0 } });
+      if (picture) {
+        // Sent on its own as multipart: the rest of the medicine is JSON with nested packs.
+        const upload = new FormData();
+        upload.append("image", picture);
+        await api(`/catalog/products/${result.id}/`, { method: "PATCH", body: upload });
+      }
       return result;
     });
     if (saved) onClose();
@@ -187,6 +222,22 @@ function ProductForm({ product, onClose }: { product: Product | null; onClose: (
           <Field label="Reorder level"><Input {...text("reorder_level")} type="number" min={0} className="num" /></Field>
           <Field label="Target stock"><Input {...text("max_stock")} type="number" min={0} className="num" /></Field>
         </div>
+        <div className="flex items-center gap-4">
+          <Thumbnail src={preview} name={form.name || "?"} size={88} />
+          <Field label="Pack photo" hint="JPG, PNG or WebP, up to 5 MB.">
+            <input
+              type="file"
+              accept="image/png,image/jpeg,image/webp"
+              className="text-[13px]"
+              onChange={(event) => {
+                const file = event.target.files?.[0] ?? null;
+                setPicture(file);
+                setPreview(file ? URL.createObjectURL(file) : (product?.image ?? null));
+              }}
+            />
+          </Field>
+        </div>
+
         <div className="grid items-end gap-3 sm:grid-cols-3">
           <Field label="Add barcode" hint={product?.barcodes.map((b) => b.code).join(", ")}>
             <Input value={barcode} onChange={(e) => setBarcode(e.target.value)} placeholder="Scan or type EAN / UPC" className="font-mono" />

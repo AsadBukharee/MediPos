@@ -122,6 +122,10 @@ STATIC_URL = "static/"
 STATIC_ROOT = BASE_DIR / "staticfiles"
 MEDIA_URL = "media/"
 MEDIA_ROOT = Path(os.environ.get("MEDIA_ROOT", BASE_DIR / "media"))
+# Product images and prescriptions are uploads, which WhiteNoise does not serve. Django serves
+# them itself unless something in front of it does: put a web server or CDN on MEDIA_URL for a
+# busy shop and set SERVE_MEDIA=0.
+SERVE_MEDIA = env_bool("SERVE_MEDIA", True)
 STORAGES = {
     "default": {"BACKEND": "django.core.files.storage.FileSystemStorage"},
     "staticfiles": {"BACKEND": "whitenoise.storage.CompressedStaticFilesStorage"},
