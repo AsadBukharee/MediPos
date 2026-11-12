@@ -90,6 +90,18 @@ services:
     depends_on:
       - backend
 
+  # Publishes the local backend on a stable public HTTPS hostname, so a frontend hosted
+  # elsewhere (Vercel) and phones can reach it without a fixed IP or an open port.
+  # Create a named tunnel in the Cloudflare dashboard, put its token in .env, then:
+  #   docker compose --profile tunnel up -d cloudflared
+  cloudflared:
+    image: cloudflare/cloudflared:latest
+    profiles: ["tunnel"]
+    restart: unless-stopped
+    command: ["tunnel", "--no-autoupdate", "run", "--token", "${CLOUDFLARE_TUNNEL_TOKEN:?set CLOUDFLARE_TUNNEL_TOKEN in .env}"]
+    depends_on:
+      - backend
+
   backup:
     image: postgres:16-alpine
     restart: unless-stopped

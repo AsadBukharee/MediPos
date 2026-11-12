@@ -101,3 +101,19 @@ def test_duplicate_medicine_is_detected(api, owner, units):
     assert clash.status_code == 400 and "duplicates" in clash.data
     forced = api(owner).post("/api/v1/catalog/products/", {**payload, "sku": "P-2", "allow_duplicate": True}, format="json")
     assert forced.status_code == 201
+
+
+def test_cors_allows_the_configured_origins(client, settings, cashier):
+    """The web app is served from another origin (Vercel), so CORS has to let it through."""
+    settings.CORS_ALLOWED_ORIGINS = ["https://medipos.vercel.app"]
+    settings.CORS_ALLOWED_ORIGIN_REGEXES = [r"^https://medipos-[a-z0-9-]+\.vercel\.app$"]
+    url = "/api/v1/auth/login/"
+
+    def origin_allowed(origin: str) -> bool:
+        preflight = client.options(url, HTTP_ORIGIN=origin, HTTP_ACCESS_CONTROL_REQUEST_METHOD="POST")
+        return preflight.headers.get("access-control-allow-origin") == origin
+
+    assert origin_allowed("https://medipos.vercel.app")
+    assert origin_allowed("https://medipos-git-feature-asad.vercel.app")  # preview deployment
+    assert not origin_allowed("https://medipos.attacker.example")
+    assert not origin_allowed("https://evil.vercel.app")

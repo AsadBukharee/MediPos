@@ -16,6 +16,9 @@ permissions are decided by the API; the clients display what it returns.
 [`docs/requirements.md`](docs/requirements.md) and the API contract in [`docs/openapi.yaml`](docs/openapi.yaml)
 (live at `/api/docs/` when the backend runs).
 
+Deployment, including the web app on Vercel with the API behind a tunnel, is in
+[`docs/DEPLOY.md`](docs/DEPLOY.md).
+
 ## Run everything with Docker
 
 ```bash
@@ -31,6 +34,15 @@ and `NEXT_PUBLIC_API_URL=http://localhost:8000` in `.env`.
 
 The stack is `db` (PostgreSQL 16), `redis`, `backend` (gunicorn, runs migrations on start), `worker` and
 `beat` (Celery), `frontend`, and `backup` (daily `pg_dump`).
+
+### Hosting the pieces separately
+
+The web app is a pure client — every page runs in the browser and nothing is fetched at build time —
+so it deploys to **Vercel** with Root Directory `frontend` and the `NEXT_PUBLIC_*` variables, while
+the API runs wherever the database is. To serve the API from your own machine, which has no fixed
+IP, put a **Cloudflare Tunnel** in front of it:
+`docker compose --profile tunnel up -d cloudflared`. Both are covered step by step, with the
+alternatives, in [`docs/DEPLOY.md`](docs/DEPLOY.md).
 
 ### Coolify
 

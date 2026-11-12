@@ -4,12 +4,13 @@ Last updated with the first commit. Section numbers refer to [`requirements.md`]
 
 ## Verified
 
-- Backend: 102 automated tests pass on PostgreSQL 16 (66 of them are one smoke check per read endpoint and report), including 25 concurrent sales against 10 units of
+- Backend: 103 automated tests pass on PostgreSQL 16 (66 of them are one smoke check per read endpoint and report), including 25 concurrent sales against 10 units of
   stock (exactly 10 succeed), expired-batch refusal, GRN confirmed twice (stock once), returns and
   cancellations preserving history, branch isolation, role restrictions, alert de-duplication, and
   stock valuation = stock ledger = Inventory GL account, and gross profit agreeing across the sales report, the
   per-medicine report and the profit & loss statement.
-- Web app: lint, type-check and production build pass. Login, dashboard, a POS sale with receipt, and
+- Web app: lint, type-check and both production builds pass — the Vercel-style build (every route
+  prerendered as static content, nothing fetched at build time) and the Docker standalone build. Login, dashboard, a POS sale with receipt, and
   every page were opened in a real browser against the running API with no console or API errors.
 - Phone app: lint, type-check, `expo-doctor` (20/20) and an Android bundle export pass.
 - Backup and restore scripts were run against a real database.

@@ -27,6 +27,10 @@ if not SECRET_KEY:
 ALLOWED_HOSTS = sorted({*env_list("DJANGO_ALLOWED_HOSTS"), "localhost", "127.0.0.1"})
 CSRF_TRUSTED_ORIGINS = env_list("DJANGO_CSRF_TRUSTED_ORIGINS")
 CORS_ALLOWED_ORIGINS = env_list("CORS_ALLOWED_ORIGINS", "http://localhost:3000")
+# For hosts whose name changes, such as Vercel preview deployments. Each entry is a full regex
+# matched against the Origin header, so anchor it and keep it as narrow as the project allows
+# (e.g. r"^https://medipos-[a-z0-9-]+\.vercel\.app$", not a pattern that allows every site).
+CORS_ALLOWED_ORIGIN_REGEXES = env_list("CORS_ALLOWED_ORIGIN_REGEXES")
 CORS_ALLOW_HEADERS = [
     "accept",
     "authorization",
